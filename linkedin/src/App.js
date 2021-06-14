@@ -1,24 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+
+import { Container, Row, Col } from 'react-bootstrap';
+
+import EditBar from './components/edit-profie'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Container>
+        <Row>
+          <Col fluid="true" md={8} lg={8} className="d-flex">
+            <Container fluid="true">
+              Some random content
+            </Container>
+          </Col>
+          <Col fluid="true" md={4} lg={4} className="d-flex">
+            <EditBar className="d-flex container-fluid"></EditBar>
+          </Col>
+        </Row>
+      </Container>
+      
+        
+      </div>
   );
 }
 
