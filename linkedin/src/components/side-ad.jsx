@@ -1,11 +1,14 @@
 import React, { Component, } from 'react';
 
-import { Card } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+//  Font Awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsisH, } from "@fortawesome/free-solid-svg-icons";
+
+import StriveLogo from "../assets/logo/strive_black.png"
 
 
 class SideAd extends Component {
@@ -19,11 +22,16 @@ class SideAd extends Component {
                   <p className="mb-0 d-inline-flex my-auto ml-0">Add</p>
                   <FontAwesomeIcon icon={faEllipsisH} className="d-inline-flex my-auto mr-0"/>
                 </Card.Title>
-                <Card.Subtitle>
+                <Card.Subtitle className="text-center">
                     Keep up with interesting, relevant updates
                 </Card.Subtitle>
-                
-
+                <Card.Img className="img-fluid px-5 py-5" src={StriveLogo}></Card.Img>
+                <Card.Subtitle className="text-center">
+                    Shakira, get the latest on <span className="fw-bold">Strive School</span> News, Jobs, and More!
+                </Card.Subtitle>
+                <Card.Subtitle className="d-inline-flex container-fluid">
+                    <Button className="d-flex mx-auto rounded-pill btn-primary bg-white text-primary border-2 px-4 justify-self-center">Follow</Button>
+                </Card.Subtitle>
                 
             </Card.Body>
             </Card>

@@ -6,6 +6,8 @@ import EditBar from './components/edit-profie'
 
 import SideAd from './components/side-ad'
 
+import AlsoView from './components/people-also-viewed'
+
 // FONT AWESOME
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { library } from "@fortawesome/fontawesome-svg-core";
@@ -18,8 +20,8 @@ import SideAd from './components/side-ad'
 
 function App() {
   return (
-    <div className="App" style={{textAlign: 'left'}}>
-      <Container>
+    <div className="App">
+      <Container style={{textAlign: 'left'}}>
         <Row>
           <Col fluid="true" md={8} lg={8} className="d-flex">
             <Container fluid="true">
@@ -30,6 +32,7 @@ function App() {
             <Row>
               <EditBar className="col-12"></EditBar>
               <SideAd className="col-12"></SideAd>
+              <AlsoView className="col-12"></AlsoView>
             </Row>
           </Col>
         </Row>
