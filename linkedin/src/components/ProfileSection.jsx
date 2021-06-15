@@ -1,6 +1,7 @@
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 
-const ProfileSection = () => {
+
+const ProfileSection = ({obj}) => {
   return (
     <Container>
       <Row>
@@ -12,10 +13,11 @@ const ProfileSection = () => {
               className="w-100 "
               src="https://picsum.photos/200/300"
             />
-            <img width="150" src="https://media-exp1.licdn.com/dms/image/C4D35AQEHGgKSN6gBWg/profile-framedphoto-shrink_400_400/0/1620813541179?e=1623769200&amp;v=beta&amp;t=XXSCoiZQhn2znwW9T6YHYgKWvhxfyNgtS6X2J5n6lGE" 
+            {/* "https://media-exp1.licdn.com/dms/image/C4D35AQEHGgKSN6gBWg/profile-framedphoto-shrink_400_400/0/1620813541179?e=1623769200&amp;v=beta&amp;t=XXSCoiZQhn2znwW9T6YHYgKWvhxfyNgtS6X2J5n6lGE"  */}
+            <img width="150" src={obj?.image}
             height="150" alt="Edit photo" 
             id="ember47" 
-            class="profile-photo-edit__preview ember-view"/>
+            className="profile-photo-edit__preview ember-view"/>
             <Card.Body>
                 <Container className='mt-3'>
                     <Row>
@@ -23,10 +25,10 @@ const ProfileSection = () => {
               <Card.Text>
                 <div>
                   {" "}
-                  <h3 className='h3'>Janusz Kondziarz</h3>
-                  <span className='junior'>Front End Developer (junior)</span> <br />
+                  <h3 className='h3'> {obj?.name} {obj?.surname} </h3>
+                  <span className='junior'>{obj?.title}</span> <br />
                   <span className='area'>
-                    Greater Pescara Metropolitan Area{" "}
+                  {obj?.area}{" "}
                     <a href="/">Contact info</a>
                   </span>{" "}
                   <br />
@@ -52,16 +54,14 @@ const ProfileSection = () => {
   <path d="M21.13 2.86a3 3 0 00-4.17 0l-13 13L2 22l6.19-2L21.13 7a3 3 0 000-4.16zM6.77 18.57l-1.35-1.34L16.64 6 18 7.35z"></path>
 
   </svg> <br /> 
-  <a href="/" className="display-flex link-without-visited-state t-black">
-            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" id="ember50" class="ghost-school ember-view EntityPhoto-square-1 flex-shrink-zero mr2"/>
-          </a>
+  
   Istituto Alberghiero e Turismo
               </Col>
               </Row>
               <Row>
-                  <Col>
-                  <Card body>This is some text within a card body.</Card>
-                  </Col>
+                 
+                  
+                  
               </Row>
               </Container>
             </Card.Body>
@@ -69,6 +69,7 @@ const ProfileSection = () => {
         </Col>
       </Row>
     </Container>
+    
   );
 };
 
