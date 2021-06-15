@@ -10,6 +10,8 @@ import AlsoView from './components/people-also-viewed'
 
 import YouKnow from './components/people-you-may-know'
 
+import LearningCard from './components/learning'
+
 // FONT AWESOME
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { library } from "@fortawesome/fontawesome-svg-core";
@@ -36,6 +38,7 @@ function App() {
               <SideAd className="col-12"></SideAd>
               <AlsoView className="col-12"></AlsoView>
               <YouKnow className="col-12"></YouKnow>
+              <LearningCard className="col-12"></LearningCard>
             </Row>
           </Col>
         </Row>
