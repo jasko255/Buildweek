@@ -1,38 +1,68 @@
-.App {
-  text-align: center;
+/* ======= handles expansion of About block ===== */
+p.collapseAbout {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.list-group-item {
+  border: none
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.card>.list-group {
+  border-top: none;
+
+
+
+/* NAVBAR STYLES */
+
+.global-nav__logo{
+  color: rgb(10, 102, 194);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#navbarer{
+  
 }
 
-.App-link {
-  color: #61dafb;
+.verticalLine {
+  border-left: 1px solid gray;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#backgroundimg{
+  max-height: 200px!important;
+}
+
+.h3{
+  font-size: 24px!important;
+}
+
+.junior{
+  font-size: 16px!important;
+}
+
+.area{
+  font-size: 14px!important;
+  color: gray;
+}
+#ember47{
+  border-radius: 50%!important;
+  border: 2px solid white!important;
+  position: absolute;
+  margin-top: 10%;
+  margin-left: 3%;
+}
+
+.badge-pill{
+  font-weight:500 ;
+  font-size: 16px;
+  padding: 3px  9px;
+ width: fit-content;
+}
+
+.connections{
+  font-weight:500 ;
+  font-size: 14px!important;
+
 }

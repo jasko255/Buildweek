@@ -1,4 +1,11 @@
+
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 import './App.css';
+import { Container } from 'react-bootstrap'
+import About from './components/About'
+import Experience from './components/Experience';
+
 
 import { Container, Row, Col } from 'react-bootstrap';
 
@@ -24,6 +31,7 @@ import LearningCard from './components/learning'
 
 function App() {
   return (
+
     <div className="App">
       <Container style={{textAlign: 'left'}}>
         <Row>
@@ -46,6 +54,7 @@ function App() {
       
         
       </div>
+
   );
 }
 
