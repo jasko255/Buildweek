@@ -11,7 +11,7 @@ import DefaultProfile from "../assets/default_profile.jpeg"
 import MiniProfileCard from "./profile-card"
 
 
-class AlsoView extends Component {
+class YouKnow extends Component {
 
     state = {
         imgDeft: "../assets/default_profile.jpeg",
@@ -45,7 +45,7 @@ class AlsoView extends Component {
         // if seemore true map 12 if see more false map 6
       return (
         <Card fluid="true" style={{ width: '100%' }} className="d-flex px-0">
-            <Card.Header className="bg-white">People also viewed</Card.Header>
+            <Card.Header className="bg-white">People you may know</Card.Header>
             <Card.Body>
                 <MiniProfileCard></MiniProfileCard>
             </Card.Body>
@@ -63,4 +63,4 @@ class AlsoView extends Component {
       }
 
 
-export default AlsoView
+export default YouKnow

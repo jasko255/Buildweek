@@ -8,6 +8,8 @@ import SideAd from './components/side-ad'
 
 import AlsoView from './components/people-also-viewed'
 
+import YouKnow from './components/people-you-may-know'
+
 // FONT AWESOME
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { library } from "@fortawesome/fontawesome-svg-core";
@@ -33,6 +35,7 @@ function App() {
               <EditBar className="col-12"></EditBar>
               <SideAd className="col-12"></SideAd>
               <AlsoView className="col-12"></AlsoView>
+              <YouKnow className="col-12"></YouKnow>
             </Row>
           </Col>
         </Row>
