@@ -19,6 +19,12 @@ class MiniProfileCard extends Component {
         id:"",
         useridx:"",
         userimg:"",
+        // usertitle2: "",
+        // username2: "",
+        // usersurname2:"",
+        // id2:"",
+        // useridx2:"",
+        // userimg2:"",
     }
 
     render () {
@@ -35,7 +41,7 @@ class MiniProfileCard extends Component {
                         </Col>
                         <Col fluid="true" md={8} lg={8} className="flex-column px-0 align-items-center">
                             <Card.Title className="d-inline-flex container-fluid px-0" style={{fontSize: '22px', fontWeight: 'bold' }}>{this.props.username} {this.props.usersurname}</Card.Title>
-                            <Card.Text className="d-inline-flex container-fluid px-0" style={{ fontSize: '22px', color: 'gray' }}>{this.props.usertitle}</Card.Text>
+                            <Card.Text className="d-inline-flex container-fluid px-0" style={{ fontSize: '18px', color: 'gray' }}>{this.props.usertitle}</Card.Text>
                         </Col>
                     </Row>
                     <Card.Subtitle className="d-inline-flex container-fluid offset-3" style={{ top: '90px', position: 'absolute' }}>

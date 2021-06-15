@@ -24,6 +24,7 @@ class YouKnow extends Component {
 
         let profileArray
         let peopleKnowArray
+        let peopleKnowArray2
 
         fetch('https://striveschool-api.herokuapp.com/api/profile/', {
             headers: {
@@ -50,12 +51,15 @@ class YouKnow extends Component {
             console.log(profileArray)
 
             peopleKnowArray = profileArray.slice(0,10)
+            peopleKnowArray2 = profileArray.slice(0,10)
 
             console.log(peopleKnowArray)
 
             let zeroFiveArr = peopleKnowArray.splice(0,5)
             console.log(zeroFiveArr)
-            let fiveTenArr = peopleKnowArray.splice(5,10)
+            let fiveTenArr = peopleKnowArray2.splice(5,10)
+
+            console.log(fiveTenArr)
 
             this.setState({ zeroFive: zeroFiveArr })
             this.setState({ fiveTen: fiveTenArr })
@@ -93,11 +97,12 @@ class YouKnow extends Component {
         let iconArrow
 
         console.log(this.state.zeroFive)
+        console.log(this.state.fiveTen)
 
         
         
 
-        this.state.seeMore === false ? (cardDisplay = "none") && (footText = "Show more") && (iconArrow = faChevronDown) : (cardDisplay = "flex") && (footText = "Show less") && (iconArrow = faChevronUp)
+        this.state.seeMore === false ? (cardDisplay = "none") && (footText = "Show more") && (iconArrow = faChevronDown) : (cardDisplay = "block") && (footText = "Show less") && (iconArrow = faChevronUp)
 
         // if seemore true map 12 if see more false map 6
       return (
@@ -107,12 +112,12 @@ class YouKnow extends Component {
             </Card.Header>
             <Card.Body className="ps-2">
             {this.state.zeroFive?.map((item, idx) => (
-                <MiniProfileCard usertitle={item.title} username={item.name} usersurname={item.surname} useridx={idx} id={item._id} userimg={item.image}/>
+                <MiniProfileCard usertitle={item.title} username={item.name} usersurname={item.surname} key={idx} id={item._id} userimg={item.image}/>
             ))}              
             </Card.Body>
             <Card.Body style = {{ display: cardDisplay }}>
-            {this.state.fiveTen?.map((item, idx) => (
-                <MiniProfileCard usertitle={item.title} username={item.name} usersurname={item.surname} useridx={idx} id={item._id} userimg={item.image}/>
+            {this.state.fiveTen?.map((item2, idx2) => (
+                <MiniProfileCard usertitle={item2.title} username={item2.name} usersurname={item2.surname} key={idx2+5} id={item2._id} userimg={item2.image}/>
              ))}
             </Card.Body>
 
