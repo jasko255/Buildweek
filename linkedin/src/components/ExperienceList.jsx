@@ -39,7 +39,7 @@ class ExperienceList extends Component {
                                             </p>
                                             <span className='d-flex mb-2'>
                                                 {/* <span className='ml-auto'>...</span> */}
-                                                <Button className='text-muted ml-auto pt-0' variant="link" onClick={this.handleExpand}>... see more</Button></span>
+                                                <Button className='text-muted ml-auto pt-0' variant="link" onClick={this.props.handleExpand}>... see more</Button></span>
                                         </>
                                     }
                                 </div>

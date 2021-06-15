@@ -70,7 +70,7 @@ class Experience extends Component {
                             </div>
                         </div>
                         {this.state.experiences.map(experience => (
-                            <ExperienceList experience={experience} handleShow={this.handleShow}/>
+                            <ExperienceList experience={experience} handleShow={this.handleShow} handleExpand={this.handleExpand} expand={this.state.expand}/>
                         ))}
                         
                         {/* <ListGroup id='ExperienceList'>
