@@ -7,10 +7,8 @@ import Experience from './components/Experience';
 
 function App() {
   return (
-    <Container>
-      <About />
-      <Experience />
-    </Container>
+    <>
+    </>
    
   );
 }
