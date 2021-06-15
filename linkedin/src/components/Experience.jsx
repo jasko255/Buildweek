@@ -1,8 +1,10 @@
 import { Component } from 'react'
 import { Col, Row, ListGroup, Modal, Card, Button, Form, Image } from 'react-bootstrap'
+import ExperienceList from './ExperienceList'
 
 class Experience extends Component {
     state = {  
+        experiences: [],
         experience: {
             role: "CTO",
             company: "Strive School",
@@ -16,6 +18,33 @@ class Experience extends Component {
         expand: false,
     }
 
+    inputChange = (e) => {
+        this.setState({
+            ...this.state,
+            experience: {
+                [e.target.id]: e.target.value
+            }
+        })
+    }
+
+    componentDidMount = async () => {
+        const apiToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM4OTcxNmMxOTMwNTAwMTU4NzE1NDYiLCJpYXQiOjE2MjM3NTg2MTQsImV4cCI6MTYyNDk2ODIxNH0.a8nHWd_m6aYBbyPS4CFTexm_WJ0_K-ZBPC_4QapdJ8c'
+        try {
+            const response = await fetch('https://striveschool-api.herokuapp.com/api/profile/5fc4c5b1ed266800170ea3d9/experiences', {
+                headers: {
+                    "Authorization": `Bearer ${apiToken}`,
+                }
+            })
+            const data = await response.json()
+            console.log(data)
+            this.setState({
+                ...this.state,
+                experiences: data
+            })
+        } catch (err) {
+            console.log(err)
+        }
+    }
     handleClose = () => this.setState({show: false});
     handleShow = () => this.setState({show: true});
 
@@ -40,7 +69,11 @@ class Experience extends Component {
                                 </svg>
                             </div>
                         </div>
-                        <ListGroup id='ExperienceList'>
+                        {this.state.experiences.map(experience => (
+                            <ExperienceList experience={experience} handleShow={this.handleShow}/>
+                        ))}
+                        
+                        {/* <ListGroup id='ExperienceList'>
                             <ListGroup.Item className='d-flex'>
                                 <Col sm={2}>
                                 <Image src="https://media-exp3.licdn.com/dms/image/C560BAQHkuJeEJ2pVMQ/company-logo_100_100/0/1622558098513?e=1631750400&v=beta&t=IeyVu_UMRs3bg2nK1Bd3STvkoVHce4lderlNZU6H4Ps" thumbnail />
@@ -73,7 +106,6 @@ class Experience extends Component {
                                                         {this.state.experience.description}
                                                         </p>
                                                         <span className='d-flex mb-2'>
-                                                            {/* <span className='ml-auto'>...</span> */}
                                                             <Button className='text-muted ml-auto pt-0' variant="link" onClick={this.handleExpand}>... see more</Button></span>
                                                     </>
                                                 }
@@ -83,23 +115,48 @@ class Experience extends Component {
                                 </Col>
                             </ListGroup.Item>
 
-                        </ListGroup>
+                        </ListGroup> */}
+                    
                     </Card>
                 </Col>
                 <Modal size="lg" show={this.state.show} onHide={this.ButtonhandleClose}>
                     <Modal.Header closeButton>
                         <Modal.Title>Add Experience</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>
+                    <Modal.Body><Form>
+                        <Form.Group>
+                            <Form.Label className="text-muted">Title</Form.Label>
+                            <Form.Control id='role' type="text" placeholder="Enter your Title" value={this.state.experience.role} onChange={(e) => this.inputChange(e)}/>
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label className="text-muted">Company</Form.Label>
+                            <Form.Control id='company' type="text" placeholder="Enter Company name" value={this.state.experience.company} onChange={(e) => this.inputChange(e)}/>
+                        </Form.Group>
+                        <Form.Row>
+                            <Form.Group as={Col}>
+                                <Form.Label className="text-muted">Start Date</Form.Label>
+                                <Form.Control id='startDate' type="date" value={this.state.experience.startDate} onChange={(e) => this.inputChange(e)} />
+                            </Form.Group>
+                            <Form.Group as={Col}>
+                                <Form.Label className="text-muted">End Date</Form.Label>
+                                <Form.Control id='endDate' type="date" value={this.state.experience.endDate} onChange={(e) => this.inputChange(e)} />
+                            </Form.Group>
+                        </Form.Row>
                         <Form.Group >
-                        <Form.Label className='text-mutted' size="sm"> Title *</Form.Label>
+                            <Form.Label className='text-mutted' size="sm"> Description</Form.Label>
                             <Form.Control 
-                                id='addExperience' 
+                                id='description' 
                                 as="textarea" rows={3} 
-                                // value={this.state.about} 
-                                // onChange={(e) => this.inputChange(e)}
+                                value={this.state.experience.description} 
+                                onChange={(e) => this.inputChange(e)}
                             />
                         </Form.Group>
+
+                        <Button variant="primary" type="submit">
+                            Submit
+                        </Button>
+                    </Form>
+                        
                     </Modal.Body>
                     <Modal.Footer>
                         {/* <Button variant="secondary" onClick={this.handleClose}>
