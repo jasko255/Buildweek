@@ -1,6 +1,15 @@
+/* ======= handles expansion of About block ===== */
 p.collapseAbout {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;  
   overflow: hidden;
+}
+
+.list-group-item {
+  border: none
+}
+
+.card>.list-group {
+  border-top: none;
 }

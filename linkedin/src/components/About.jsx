@@ -34,7 +34,7 @@ class About extends Component {
                     <Card>
                         <Card.Body className='pb-0'>
                             <div className='d-flex'>
-                                <h4>About</h4>
+                                <h4 className='font-weight-normal'>About</h4>
                                 <div className="ml-auto" onClick={this.handleShow}>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
                                         <path d="M21.13 2.86a3 3 0 00-4.17 0l-13 13L2 22l6.19-2L21.13 7a3 3 0 000-4.16zM6.77 18.57l-1.35-1.34L16.64 6 18 7.35z"></path>
@@ -48,7 +48,7 @@ class About extends Component {
                                     <p className='collapseAbout mb-0' >{this.state.about}</p>
                                     <span className='d-flex mb-2'>
                                         {/* <span className='ml-auto'>...</span> */}
-                                        <Button className='ml-auto pt-0' variant="link" onClick={this.handleExpand}>... see more</Button></span>
+                                        <Button className='text-muted ml-auto pt-0' variant="link" onClick={this.handleExpand}>... see more</Button></span>
                                 </>
                             }
                             </div>
