@@ -10,6 +10,59 @@ p.collapseAbout {
   border: none
 }
 
+
 .card>.list-group {
   border-top: none;
+
+
+
+/* NAVBAR STYLES */
+
+.global-nav__logo{
+  color: rgb(10, 102, 194);
+}
+
+#navbarer{
+  
+}
+
+.verticalLine {
+  border-left: 1px solid gray;
+}
+
+#backgroundimg{
+  max-height: 200px!important;
+}
+
+.h3{
+  font-size: 24px!important;
+}
+
+.junior{
+  font-size: 16px!important;
+}
+
+.area{
+  font-size: 14px!important;
+  color: gray;
+}
+#ember47{
+  border-radius: 50%!important;
+  border: 2px solid white!important;
+  position: absolute;
+  margin-top: 10%;
+  margin-left: 3%;
+}
+
+.badge-pill{
+  font-weight:500 ;
+  font-size: 16px;
+  padding: 3px  9px;
+ width: fit-content;
+}
+
+.connections{
+  font-weight:500 ;
+  font-size: 14px!important;
+
 }
