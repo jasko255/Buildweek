@@ -3,10 +3,7 @@ import { Container, Row, Col, Card, Button } from "react-bootstrap";
 
 const ProfileSection = ({obj}) => {
   return (
-    // <Container>
-      // <Row>
-        <Col>
-          <Card className="w-100 mt-5">
+          <Card>
             <Card.Img
               variant="top"
               id='backgroundimg'
@@ -66,9 +63,6 @@ const ProfileSection = ({obj}) => {
               </Container>
             </Card.Body>
           </Card>
-        </Col>
-      // </Row>
-    // </Container>
     
   );
 };

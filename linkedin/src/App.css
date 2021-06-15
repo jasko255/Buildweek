@@ -15,6 +15,9 @@ p.collapseAbout {
   border-top: none;
 }
 
+.card {
+  margin: 10px;
+}
 
 /* NAVBAR STYLES */
 
