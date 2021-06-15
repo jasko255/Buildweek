@@ -29,9 +29,10 @@ class About extends Component {
     
     render() { 
         return (  
-            <Row className='my-2'>
-                <Col md={8}>
-                    <Card>
+        <>
+             {/* <Row className='my-2'> */}
+                {/* <Col md={8}> */}
+                    <Card className='my-3'>
                         <Card.Body className='pb-0'>
                             <div className='d-flex'>
                                 <h4 className='font-weight-normal'>About</h4>
@@ -55,7 +56,7 @@ class About extends Component {
                         </Card.Body>
                             {/* <Button className='ml-auto' variant="link"><small>...see more</small></Button> */}
                     </Card>
-                </Col>
+                {/* </Col> */}
                 <Modal size="lg" show={this.state.show} onHide={this.ButtonhandleClose}>
                     <Modal.Header closeButton>
                         <Modal.Title>Edit about</Modal.Title>
@@ -75,7 +76,8 @@ class About extends Component {
                         </Button>
                     </Modal.Footer>
                 </Modal>
-            </Row>
+            {/* </Row> */}
+          </>  
         );
     }
 }

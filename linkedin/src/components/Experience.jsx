@@ -58,9 +58,10 @@ class Experience extends Component {
 
     render() { 
         return (  
-            <Row>
-                <Col md={8}>
-                    <Card>
+            <>
+            {/* <Row> */}
+                {/* <Col md={8}> */}
+                    <Card className='my-3'>
                         <div className='d-flex p-3'>
                             <h4 className='font-weight-normal'>Experience</h4>
                             <div className="ml-auto" onClick={this.handleShow}>
@@ -118,7 +119,7 @@ class Experience extends Component {
                         </ListGroup> */}
                     
                     </Card>
-                </Col>
+                {/* </Col> */}
                 <Modal size="lg" show={this.state.show} onHide={this.ButtonhandleClose}>
                     <Modal.Header closeButton>
                         <Modal.Title>Add Experience</Modal.Title>
@@ -167,7 +168,8 @@ class Experience extends Component {
                         </Button>
                     </Modal.Footer>
                 </Modal>
-            </Row>
+           {/* </Row> */}
+            </>
         );
     }
 }

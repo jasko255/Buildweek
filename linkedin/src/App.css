@@ -13,18 +13,15 @@ p.collapseAbout {
 
 .card>.list-group {
   border-top: none;
-
+}
 
 
 /* NAVBAR STYLES */
 
-.global-nav__logo{
+#global-nav-logo {
   color: rgb(10, 102, 194);
 }
 
-#navbarer{
-  
-}
 
 .verticalLine {
   border-left: 1px solid gray;
