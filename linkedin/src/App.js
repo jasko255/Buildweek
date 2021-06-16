@@ -41,10 +41,10 @@ function App() {
     // <div className="App">
       <Router>
 
-        <Container style={{ textAlign: 'left' }}>
-          <NavBar />
-          <Row>
-            <Col md={8} className="d-flex">
+        <Container fluid="true" style={{ textAlign: 'left' }}>
+          <NavBar id="navlinked"/>
+          <Row fluid="false" className="flex-row">
+            <Col md={8} className="d-flex ms-auto">
               <Container fluid="true">
                 <Route exact path="/" component={People} />
                 <Route exact path="/profile/:userId/" component={ProfDet} />
@@ -52,7 +52,7 @@ function App() {
                 <Route exact path="/profile/:userId/" component={Experience} />
               </Container>
             </Col>
-            <Col fluid="true" md={4} lg={4} className="d-inline-flex">
+            <Col fluid="true" md={4} lg={4} className="d-inline-flex me-auto">
               <Row>
                 <EditBar className="col-12"></EditBar>
                 <SideAd className="col-12"></SideAd>

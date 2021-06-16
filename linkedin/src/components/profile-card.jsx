@@ -40,7 +40,7 @@ class MiniProfileCard extends Component {
                             <Card.Img src={DefaultProfilePic} className="rounded-circle"></Card.Img>
                         </Col>
                         <Col fluid="true" md={8} lg={8} className="flex-column px-0 align-items-center">
-                            <Card.Title className="d-inline-flex container-fluid px-0" style={{fontSize: '22px', fontWeight: 'bold' }}>{this.props.username} {this.props.usersurname}</Card.Title>
+                            <Card.Title className="d-inline-flex container-fluid px-0" style={{ fontSize: '22px', fontWeight: 'bold' }}>{this.props.username} {this.props.usersurname}</Card.Title>
                             <Card.Text className="d-inline-flex container-fluid px-0" style={{ fontSize: '18px', color: 'gray' }}>{this.props.usertitle}</Card.Text>
                         </Col>
                     </Row>
