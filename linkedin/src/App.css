@@ -1,3 +1,13 @@
+/* stop scroll X */
+#root {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+#navlinked {
+  max-width: 100vw;
+}
+
 /* ======= handles expansion of About block ===== */
 p.collapseAbout {
   display: -webkit-box;
@@ -23,6 +33,11 @@ p.collapseAbout {
 
 #global-nav-logo {
   color: rgb(10, 102, 194);
+}
+
+#global-nav-icon--mercado__my-network, #global-nav-icon--mercado__home, #global-nav-icon--mercado__jobs, #global-nav-icon--mercado__messaging, #global-nav-icon--mercado__notifications {
+  fill: #6c757d !important;
+
 }
 
 
