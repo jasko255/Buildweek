@@ -1,10 +1,18 @@
 import { Component } from 'react'
 import { ListGroup, Button, Col, Row, Image } from 'react-bootstrap'
+import ExperienceModal from './ExperienceModal';
 
 class ExperienceList extends Component {
-    state = {}
+    state = {
+        show: false,
+    }
+
+    handleClose = () => this.setState({ show: false });
+    handleShow = () => this.setState({ show: true });
+
     render() {
         return (
+            <>
             <ListGroup id='ExperienceList'>
                 <ListGroup.Item className='d-flex'>
                     <Col sm={2}>
@@ -19,12 +27,12 @@ class ExperienceList extends Component {
                                         <h6 className='m-0'>{this.props.experience.role}</h6>
                                         <p>
                                             <span className='text-muted'>
-                                                From {this.props.experience.startDate} to {this.props.experience.endDate} <br />
+                                                From {this.props.experience.startDate.slice(0,10)} to {this.props.experience.endDate?.slice(0,10)} <br />
                                                 {this.props.experience.area}
                                             </span>
                                         </p>
                                     </div>
-                                    <div className="ml-auto" onClick={this.props.handleShow}>
+                                    <div className="ml-auto" onClick={this.handleShow}>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
                                             <path d="M21.13 2.86a3 3 0 00-4.17 0l-13 13L2 22l6.19-2L21.13 7a3 3 0 000-4.16zM6.77 18.57l-1.35-1.34L16.64 6 18 7.35z"></path>
                                         </svg>
@@ -49,6 +57,8 @@ class ExperienceList extends Component {
                 </ListGroup.Item>
 
             </ListGroup>
+            <ExperienceModal experience={this.props.experience} show={this.state.show} onHide={this.handleClose} />
+            </>
         );
     }
 }
