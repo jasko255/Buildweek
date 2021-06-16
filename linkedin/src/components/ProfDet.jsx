@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Card, Row,  ListGroup } from "react-bootstrap";
+
 import ProfileSection from "./ProfileSection";
 
 const ProfDet = ({match}) => {

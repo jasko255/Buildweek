@@ -3,26 +3,26 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import './App.css';
 // import { Container } from 'react-bootstrap'
-import About from './components/About'
-import Experience from './components/Experience';
+// import About from './components/About'
+// import Experience from './components/Experience';
+
+import Home from './components/Home';
 
 
+// import EditBar from './components/edit-profie'
 
+// import SideAd from './components/side-ad'
 
-import EditBar from './components/edit-profie'
+// import AlsoView from './components/people-also-viewed'
 
-import SideAd from './components/side-ad'
+// import YouKnow from './components/people-you-may-know'
 
-import AlsoView from './components/people-also-viewed'
-
-import YouKnow from './components/people-you-may-know'
-
-import LearningCard from './components/learning'
-import People from './components/People';
-import ProfDet from './components/ProfDet';
+// import LearningCard from './components/learning'
+// import People from './components/People';
+// import ProfDet from './components/ProfDet';
 import NavBar from './components/NavBar';
 
-import { Container, Row, Col } from 'react-bootstrap';
+// import { Container, Row, Col } from 'react-bootstrap';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // FONT AWESOME
@@ -40,8 +40,9 @@ function App() {
 
     // <div className="App">
       <Router>
-
-        <Container style={{ textAlign: 'left' }}>
+        <NavBar />
+        <Home />
+        {/* <Container style={{ textAlign: 'left' }}>
           <NavBar id="navlinked"/>
           <Row fluid="false" className="flex-row">
             <Col md={8} className="d-flex ms-auto">
@@ -62,7 +63,7 @@ function App() {
               </Row>
             </Col>
           </Row>
-        </Container>
+        </Container> */}
 
       </Router>
 
