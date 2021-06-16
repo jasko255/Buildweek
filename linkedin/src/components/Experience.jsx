@@ -100,7 +100,7 @@ class Experience extends Component {
                 {/* <Row> */}
                 {/* <Col md={8}> */}
                 <Card >
-                    <div className='d-flex p-3'>
+                    <div className='d-flex justify-content-between p-3'>
                         <h4 className='font-weight-normal'>Experience</h4>
                         <div className="ml-auto" onClick={this.handleShow}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
