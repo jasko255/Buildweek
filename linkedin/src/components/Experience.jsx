@@ -6,9 +6,9 @@ import ExperienceModal from './ExperienceModal'
 class Experience extends Component {
     state = {
         experiences: [],
-        newExperience:{},
+        newExperience: {},
         show: false,
-        expand: false,
+        // expand: false,
     }
 
     inputChange = (e) => {
@@ -21,8 +21,7 @@ class Experience extends Component {
         })
     }
 
-    componentDidMount = async (props) => {
-        // console.log(this.props.match.params.userId)
+    fetchExperiences = async (props) => {
         const userId = this.props.match.params.userId
         const apiToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM4OTcxNmMxOTMwNTAwMTU4NzE1NDYiLCJpYXQiOjE2MjM3NTg2MTQsImV4cCI6MTYyNDk2ODIxNH0.a8nHWd_m6aYBbyPS4CFTexm_WJ0_K-ZBPC_4QapdJ8c'
         try {
@@ -41,22 +40,26 @@ class Experience extends Component {
             console.log(err)
         }
     }
+
+    componentDidMount = async (props) => {
+        this.fetchExperiences()
+    }
+
     handleClose = () => this.setState({ show: false });
     handleShow = () => this.setState({ show: true });
 
-    handleExpand = () => {
-        console.log('expand')
-        this.setState({
-            ...this.state,
-            expand: true
-        })
-    }
+    // handleExpand = () => {
+    //     console.log('expand')
+    //     this.setState({
+    //         ...this.state,
+    //         expand: true
+    //     })
+    // }
 
     addExperience = async (e) => {
         e.preventDefault() 
 
-
-        // console.log(this.state.newExperience)
+        console.log(this.state.newExperience)
         const userId = this.props.match.params.userId
         const apiToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM4OTcxNmMxOTMwNTAwMTU4NzE1NDYiLCJpYXQiOjE2MjM3NTg2MTQsImV4cCI6MTYyNDk2ODIxNH0.a8nHWd_m6aYBbyPS4CFTexm_WJ0_K-ZBPC_4QapdJ8c'
         try {
@@ -68,13 +71,27 @@ class Experience extends Component {
                     "Content-type": "application/json"
                 }
             })
-            const data = await response.json()
-            console.log(data)
+            if(response.ok) {
+                const data = await response.json()
+                console.log(data)
+                this.setState({
+                    newExperience: {
+                        area: "",
+                        company: "",
+                        description: "",
+                        endDate: "",
+                        role: "",
+                        startDate: "",
+                    },
+                })
+                this.fetchExperiences()
+            } else {
+                console.log('we had a problem')
+            }
            
         } catch (err) {
             console.log(err)
         }
-
     }
 
     render() {
@@ -92,7 +109,7 @@ class Experience extends Component {
                         </div>
                     </div>
                     {this.state.experiences.map(experience => (
-                        <ExperienceList userId={this.props.match.params.userId} experience={experience} handleShow={this.handleShow} handleExpand={this.handleExpand} expand={this.state.expand} />
+                        <ExperienceList userId={this.props.match.params.userId} experience={experience} fetchExperiences={this.fetchExperiences} handleExpand={this.handleExpand} expand={this.state.expand} />
                     ))}
                 </Card>
                 <Modal size="lg" show={this.state.show} onHide={this.handleClose}>
@@ -132,7 +149,7 @@ class Experience extends Component {
                             />
                         </Form.Group>
 
-                        <Button variant="primary" type="submit" >
+                        <Button className='mt-3' variant="primary" type="submit" >
                             Add Experience
                         </Button>
                     </Form>

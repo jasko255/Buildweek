@@ -47,6 +47,14 @@ class ExperienceModal extends Component {
                     "Content-type": "application/json"
                 }
             })
+            if(response.ok) {
+                const data = await response.json()
+                console.log(data)
+                this.props.fetchExperiences()
+                this.props.onHide()
+            } else {
+                console.log('we had a problem')
+            }
             const data = await response.json()
             console.log(data)
            
@@ -68,9 +76,14 @@ class ExperienceModal extends Component {
                     "Authorization": `Bearer ${apiToken}`,
                 }
             })
-            const data = await response.json()
-            console.log(data)
-           
+            if(response.ok) {
+                const data = await response.json()
+                console.log(data)
+                this.props.fetchExperiences()
+                this.props.onHide()
+            } else {
+                console.log('we had a problem')
+            }
         } catch (err) {
             console.log(err)
         }
@@ -80,7 +93,7 @@ class ExperienceModal extends Component {
         return (
             <Modal size="lg" show={this.props.show} onHide={this.props.onHide}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Add Experience</Modal.Title>
+                    <Modal.Title>Edit Experience</Modal.Title>
                 </Modal.Header>
                 <Modal.Body><Form onSubmit={this.editExperience}>
                     <Form.Group>
@@ -118,10 +131,10 @@ class ExperienceModal extends Component {
 
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" type="submit" onClick={this.handleClose}>
+                    <Button variant="secondary" onClick={this.props.onHide}>
                             Close
                         </Button>
-                    <Button variant="primary" type="submit" onClick={this.deleteExperience}>
+                    <Button variant="primary" onClick={this.deleteExperience}>
                         Delete
                     </Button>
                 </Modal.Footer>

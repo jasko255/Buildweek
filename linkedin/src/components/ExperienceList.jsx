@@ -5,10 +5,19 @@ import ExperienceModal from './ExperienceModal';
 class ExperienceList extends Component {
     state = {
         show: false,
+        expand: false,
     }
 
     handleClose = () => this.setState({ show: false });
     handleShow = () => this.setState({ show: true });
+
+    handleExpand = () => {
+        console.log('expand')
+        this.setState({
+            ...this.state,
+            expand: true
+        })
+    }
 
     render() {
         return (
@@ -22,7 +31,7 @@ class ExperienceList extends Component {
                         <h5 className='m-0'>{this.props.experience.company}</h5>
                         <ListGroup>
                             <ListGroup.Item id='experienceItem' className='px-0'>
-                                <div className='d-flex'>
+                                <div className='d-flex justify-content-between'>
                                     <div className='d-block'>
                                         <h6 className='m-0'>{this.props.experience.role}</h6>
                                         <p>
@@ -39,15 +48,15 @@ class ExperienceList extends Component {
                                     </div>
                                 </div>
                                 <div className='box'>
-                                    {this.props.expand
+                                    {this.state.expand
                                         ? <p  >{this.props.experience.description}</p>
                                         : <>
                                             <p className='collapseAbout mb-0' >
                                                 {this.props.experience.description}
                                             </p>
-                                            <span className='d-flex mb-2'>
+                                            <span className='d-flex justify-content-end mb-2'>
                                                 {/* <span className='ml-auto'>...</span> */}
-                                                <Button className='text-muted ml-auto pt-0' variant="link" onClick={this.props.handleExpand}>... see more</Button></span>
+                                                <Button className='text-muted ml-auto pt-0' variant="link" onClick={this.handleExpand}>... see more</Button></span>
                                         </>
                                     }
                                 </div>
@@ -57,7 +66,7 @@ class ExperienceList extends Component {
                 </ListGroup.Item>
 
             </ListGroup>
-            <ExperienceModal experience={this.props.experience} show={this.state.show} onHide={this.handleClose} />
+            <ExperienceModal experience={this.props.experience} show={this.state.show} onHide={this.handleClose} fetchExperiences={this.props.fetchExperiences}/>
             </>
         );
     }
