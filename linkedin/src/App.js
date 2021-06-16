@@ -41,7 +41,7 @@ function App() {
     // <div className="App">
       <Router>
 
-        <Container fluid="true" style={{ textAlign: 'left' }}>
+        <Container style={{ textAlign: 'left' }}>
           <NavBar id="navlinked"/>
           <Row fluid="false" className="flex-row">
             <Col md={8} className="d-flex ms-auto">
