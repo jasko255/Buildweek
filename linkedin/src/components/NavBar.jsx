@@ -1,9 +1,10 @@
-import { Navbar, Container, Nav, NavDropdown, Form, FormControl } from 'react-bootstrap'
+import { Navbar, Container, Nav, NavDropdown, Form, FormControl, InputGroup, Col } from 'react-bootstrap'
 import defaultProf from '../assets/default_profile.jpeg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretDown } from "@fortawesome/free-solid-svg-icons"
+import { faCaretDown, faSearch } from "@fortawesome/free-solid-svg-icons"
 
 const NavBar = () => {
+  // const searchHolder = <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
   return (
     <Navbar expand="lg" id='navbarer' className="d-flex justify-content-center bg-white">
       <Container className="d-flex mx-auto px-5">
@@ -19,13 +20,19 @@ const NavBar = () => {
         </svg></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Form inline>
-            <FormControl type="text" placeholder="Search" style={{ height: 40 }} className="mr-sm-2 border-0 bg-light rounded" />
-
-
-
-          </Form>
-          <Nav className="d-inline-flex ms-auto">
+        <Form inline className="align-items-center" style={{ height: "40px" }}>
+        <Col xs="auto">
+          <InputGroup className="flex-row mb-2">
+            <InputGroup.Prepend>
+              <InputGroup.Text style={{ height: "40px", width: "40px", borderRadius: "0.25rem 0px 0px 0.25rem", backgroundColor: "White", borderRight: 0, paddingLeft: "1rem", paddingRight: "0" }}>
+                <FontAwesomeIcon style={{ height: "15px", width: "15px"}} icon={faSearch}/>
+              </InputGroup.Text>
+            </InputGroup.Prepend>
+            <FormControl id="inlineFormInputGroup" placeholder="Search" style={{ height: "40px", width: "300px", borderLeft: "0", paddingLeft: "0" }}/>
+          </InputGroup>
+        </Col>
+        </Form>
+          <Nav className="d-inline-flex ms-auto mt-1">
             
 
             <Nav.Link fluid href="#home" className="flex-col text-center py-0">
@@ -71,16 +78,20 @@ const NavBar = () => {
             </div>
             <span className="verticalLine d-inline"> </span>
 
-              <Nav.Link href="#home"> 
-              <svg id="global-nav-icon--classic__work" height="24" width="24">
-                <path d="M10 10h4v4h-4v-4zm0 11h4v-4h-4v4zm-7-7h4v-4H3v4zm0 7h4v-4H3v4zM3 7h4V3H3v4zm14 7h4v-4h-4v4zm0-11v4h4V3h-4zm-7 4h4V3h-4v4zm7 14h4v-4h-4v4z"></path>
+              <Nav.Link href="#home" className="flex-col text-center py-0"> 
+              <svg id="global-nav-icon--classic__work" height="40" width="40" viewBox="0 0 30 30">
+                <path transform="translate(2, 2)" d="M10 10h4v4h-4v-4zm0 11h4v-4h-4v4zm-7-7h4v-4H3v4zm0 7h4v-4H3v4zM3 7h4V3H3v4zm14 7h4v-4h-4v4zm0-11v4h4V3h-4zm-7 4h4V3h-4v4zm7 14h4v-4h-4v4z"></path>
               </svg> 
-              <p className="mb-0">Work</p> <FontAwesomeIcon icon={faCaretDown}/>
+              <div>
+                <p className="mb-0 text-secondary d-inline-flex pe-1">Work</p> 
+                <FontAwesomeIcon icon={faCaretDown} className="d-inline-flex text-secondary" style={{ height: "15px", width: "15px"}}/>
+              </div>
               </Nav.Link>
             
             <Nav.Link href="#home">
 
-              Go Premium</Nav.Link>
+              Go Premium
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

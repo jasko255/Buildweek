@@ -1,5 +1,5 @@
 import {
-  Container,
+  // Container,
   Card,
   Button,
   Row,
@@ -14,9 +14,9 @@ import {
 // import People from "./People";
 import { useEffect, useState } from "react";
 import SideAd from "./side-ad";
-import MiniProfileCard from "./profile-card";
-import YouKnow from "./people-you-may-know";
-import AlsoView from "./people-also-viewed";
+// import MiniProfileCard from "./profile-card";
+// import YouKnow from "./people-you-may-know";
+// import AlsoView from "./people-also-viewed";
 
 const Home = () => {
   const [posts, setPosts] = useState(null);
@@ -81,12 +81,12 @@ const Home = () => {
 
   return (
     <>
-      <Container>
+      {/* <Container> */}
         <Row>
-          <Col md={2}>
+          <Col md={4}>
             <SideAd />
           </Col>
-          <Col md={6} className=''>
+          <Col md={8} className=''>
             <Card>
               <Row className="mt-3">
                 <Col md={1}>
@@ -198,7 +198,7 @@ const Home = () => {
                 <Card.Body>
                   <Card.Title>Special title treatment</Card.Title>
                   <Card.Text>{el.text}</Card.Text>
-                  <img src={`https://picsum.photos/20${i}`} max-width="100px" />
+                  <img src={`https://picsum.photos/20${i}`} max-width="100px" alt='alternative' />
                 </Card.Body>
                 <ListGroup variant="flush">
                   <ListGroup.Item style={{ textAlign: "left" }}>
@@ -300,14 +300,14 @@ const Home = () => {
               </Card>
             ))}
           </Col>
-          <Col md={4}>
+          {/* <Col md={4}>
             <MiniProfileCard />
             <YouKnow />
 
             <SideAd />
-          </Col>
+          </Col> */}
         </Row>
-      </Container>
+      {/* </Container> */}
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

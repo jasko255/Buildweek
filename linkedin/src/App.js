@@ -38,36 +38,37 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 function App() {
   return (
 
-    // <div className="App">
-      <Router>
-        <NavBar id="navlinked"/>
-        <Home />
-        <Container style={{ textAlign: 'left' }}>
-          {/* <NavBar id="navlinked"/> */}
-          <Row fluid="false" className="flex-row">
-            <Col md={8} className="d-flex ms-auto">
-              <Container fluid="true">
+    <Router>
+
+      <NavBar id="navlinked" />
+      <Container fluid style={{ textAlign: 'left', padding: 0 }}>
+        <Container>
+          <Row className="flex-row">
+            <Col fluid="true" md={8} className="d-inline-flex ml-auto mr-0">
+              <Container fluid className="pe-0">
+                <Route exact path="/" component={Home} />
                 <Route exact path="/" component={People} />
                 <Route exact path="/profile/:userId/" component={ProfDet} />
                 <Route exact path="/profile/:userId/" component={About} />
                 <Route exact path="/profile/:userId/" component={Experience} />
               </Container>
             </Col>
-            <Col fluid="true" md={4} lg={4} className="d-inline-flex me-auto">
+            <Col fluid="true" md={4} className="d-inline-flex mr-auto ml-0">
               <Row>
-                <EditBar className="col-12"></EditBar>
-                <SideAd className="col-12"></SideAd>
-                <AlsoView className="col-12"></AlsoView>
-                <YouKnow className="col-12"></YouKnow>
-                <LearningCard className="col-12"></LearningCard>
+                <Container fluid className="ps-0 pe-5">
+                  <EditBar className="col-12"></EditBar>
+                  <SideAd className="col-12"></SideAd>
+                  <AlsoView className="col-12"></AlsoView>
+                  <YouKnow className="col-12"></YouKnow>
+                  <LearningCard className="col-12"></LearningCard>
+                </Container>
               </Row>
             </Col>
           </Row>
         </Container>
+      </Container>
 
-      </Router>
-
-    // </div>
+    </Router>
 
   );
 }
