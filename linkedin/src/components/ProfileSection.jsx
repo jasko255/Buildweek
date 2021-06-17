@@ -81,11 +81,10 @@ const ProfileSection = ({obj}) => {
   const handleShow2 = () => setShow2(true);
 
   const editPicture = async (e) => {
-    e.preventDefault() 
+    // e.preventDefault() 
 
     const newPicture = new FormData()
     newPicture.append('profile', e.target.files[0])
-    // newPicture.append('file', e.target.value)
 
     console.log(e.target.files[0])
     console.log(newPicture)
@@ -100,14 +99,14 @@ const ProfileSection = ({obj}) => {
             }
         })
         if(response.ok) {
-            const data = await response.json()
-            console.log(data)
+            // const data = await response.json()
+            // console.log(data)
             setShow(false)
         } else {
             console.log('we had a problem')
         }
-        const data = await response.json()
-        console.log(data)
+        // const data = await response.json()
+        // console.log(data)
        
     } catch (err) {
         console.log(err)
@@ -227,24 +226,26 @@ const ProfileSection = ({obj}) => {
             <Form.Group className='text-center'>
               <Image src={obj?.image} roundedCircle fluid style={{ width: 300, height: 300 }} />
             </Form.Group>
-            <Form.Group>
-              <Form.File  id="image" label="Example file input" onChange={editPicture}/>
-            </Form.Group>
-            <Button className='mt-3' variant="primary" type="submit" >
-              Save Changes
-            </Button>
+            <Form.Group className='mt-5'>
+              <Form.File  id="image" label="Select Picture --> " onChange={editPicture}/>
+            </Form.Group >
+            <Form.Row className='d-flex justify-content-end'>
+              <Button className='m-2' variant="primary" type="submit" >
+                Save Changes
+              </Button>
+            </Form.Row>
           </Form>
         </Modal.Body>
         
-        <Modal.Footer className='text-white bg-dark border-top-0'>
+        {/* <Modal.Footer className='text-white bg-dark border-top-0'>
         
           <Button variant="secondary" onClick={handleClose2}>
             Close
           </Button>
-          {/* <Button variant="primary" onClick={handleClose2}>
+          <Button variant="primary" type="submit" >
             Save Changes
-          </Button> */}
-        </Modal.Footer>
+          </Button>
+        </Modal.Footer> */}
       </Modal>
     </>
   );
