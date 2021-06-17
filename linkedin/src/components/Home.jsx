@@ -103,7 +103,7 @@ const Home = () => {
                 <Col md={10}>
                   <Button
                     variant="outline-secondary"
-                    className="badge-pill ml-2 mt-1 w-100 text-left"
+                    className="badge-pill ml-3 mt-1 w-100 text-left"
                     style={{ height: "95%", border: "1px solid grey" }}
                     onClick={handleShow}
                   >
