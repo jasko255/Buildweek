@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Container, Row, Col, Card, Button, Modal, Form } from "react-bootstrap";
+import { Container, Row, Col, Card, Button, Modal, Form, Image } from "react-bootstrap";
 // import { propTypes } from "react-bootstrap/esm/Image";
 
 
@@ -14,7 +14,7 @@ const ProfileSection = ({obj}) => {
       bio: '',
       title: '',
       area: '',
-    // image: obj.image ? obj.image : '', //server generated on upload
+      image: '', //server generated on upload
     // "username": "admin", //server generated from Auth
     // "createdAt": "2019-09-20T08:53:07.094Z", //server generated
     // "updatedAt": "2019-09-20T09:00:46.977Z", //server generated
@@ -30,6 +30,7 @@ const ProfileSection = ({obj}) => {
       bio: obj?.bio,
       title: obj?.title,
       area: obj?.area,
+      image: obj?.image,
     })
   },[obj])
 
@@ -74,6 +75,45 @@ const ProfileSection = ({obj}) => {
     }
   }
 
+  const [show2, setShow2] = useState(false);
+
+  const handleClose2 = () => setShow2(false);
+  const handleShow2 = () => setShow2(true);
+
+  const editPicture = async (e) => {
+    e.preventDefault() 
+
+    const newPicture = new FormData()
+    newPicture.append('profile', e.target.files[0])
+    // newPicture.append('file', e.target.value)
+
+    console.log(e.target.files[0])
+    console.log(newPicture)
+    const apiToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM4OTcxNmMxOTMwNTAwMTU4NzE1NDYiLCJpYXQiOjE2MjM3NTg2MTQsImV4cCI6MTYyNDk2ODIxNH0.a8nHWd_m6aYBbyPS4CFTexm_WJ0_K-ZBPC_4QapdJ8c'
+    try {
+        const response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/60c89716c193050015871546/picture`, {
+            method: 'POST',
+            body: newPicture,
+            headers: {
+                "Authorization": `Bearer ${apiToken}`,
+                // "Content-type": "application/json"
+            }
+        })
+        if(response.ok) {
+            const data = await response.json()
+            console.log(data)
+            setShow(false)
+        } else {
+            console.log('we had a problem')
+        }
+        const data = await response.json()
+        console.log(data)
+       
+    } catch (err) {
+        console.log(err)
+    }
+  }
+
   return (
     <>
       <Card>
@@ -84,7 +124,7 @@ const ProfileSection = ({obj}) => {
           src="https://picsum.photos/200/300"
         />
         {/* "https://media-exp1.licdn.com/dms/image/C4D35AQEHGgKSN6gBWg/profile-framedphoto-shrink_400_400/0/1620813541179?e=1623769200&amp;v=beta&amp;t=XXSCoiZQhn2znwW9T6YHYgKWvhxfyNgtS6X2J5n6lGE"  */}
-        <img width="150" src={obj?.image}
+        <img onClick={handleShow2} width="150" src={obj?.image}
           height="150" alt="Edited"
           id="ember47"
           className="profile-photo-edit__preview ember-view" />
@@ -174,6 +214,36 @@ const ProfileSection = ({obj}) => {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
+        </Modal.Footer>
+      </Modal>
+    
+      {/*============= Modal for the Profile Picture =============*/}
+      <Modal size="lg" show={show2} onHide={handleClose2}>
+        <Modal.Header className='text-white bg-dark border-bottom-0 ' closeButton>
+          <Modal.Title >Profile Photo</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className='text-white bg-dark'>
+          <Form >
+            <Form.Group className='text-center'>
+              <Image src={obj?.image} roundedCircle fluid style={{ width: 300, height: 300 }} />
+            </Form.Group>
+            <Form.Group>
+              <Form.File  id="image" label="Example file input" onChange={editPicture}/>
+            </Form.Group>
+            <Button className='mt-3' variant="primary" type="submit" >
+              Save Changes
+            </Button>
+          </Form>
+        </Modal.Body>
+        
+        <Modal.Footer className='text-white bg-dark border-top-0'>
+        
+          <Button variant="secondary" onClick={handleClose2}>
+            Close
+          </Button>
+          {/* <Button variant="primary" onClick={handleClose2}>
+            Save Changes
+          </Button> */}
         </Modal.Footer>
       </Modal>
     </>
