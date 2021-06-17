@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { ListGroup, Button, Col, Row, Image } from 'react-bootstrap'
+import { ListGroup, Button, Col, Image } from 'react-bootstrap'
 import ExperienceModal from './ExperienceModal';
 
 class ExperienceList extends Component {

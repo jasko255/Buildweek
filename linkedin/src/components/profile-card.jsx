@@ -1,4 +1,4 @@
-import React, { Component, Link } from 'react';
+import React, { Component, } from 'react';
 
 import { Card, Col, Button, Row, Container } from 'react-bootstrap';
 
@@ -6,8 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // import history from './history'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 import DefaultProfile from "../assets/default_profile.jpeg"
 

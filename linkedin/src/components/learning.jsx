@@ -1,14 +1,14 @@
 import React, { Component, } from 'react';
 
-import { Card, Col, Button, Row } from 'react-bootstrap';
+import { Card, } from 'react-bootstrap';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
-import { faLinkedinIn, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+// import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { faLinkedinIn,  } from '@fortawesome/free-brands-svg-icons'
 
-import DefaultProfile from "../assets/default_profile.jpeg"
+// import DefaultProfile from "../assets/default_profile.jpeg"
 import MiniVideoCard from "./mini-video-card"
 
 
