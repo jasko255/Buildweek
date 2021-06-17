@@ -47,7 +47,7 @@ function App() {
             <Col fluid="true" md={8} className="d-inline-flex ml-auto mr-0">
               <Container fluid className="pe-0">
                 <Route exact path="/" component={Home} />
-                <Route exact path="/" component={People} />
+                <Route exact path="/search" component={People} />
                 <Route exact path="/profile/:userId/" component={ProfDet} />
                 {/* <Route exact path="/profile/:userId/" component={About} /> */}
                 <Route exact path="/profile/:userId/" component={Experience} />
