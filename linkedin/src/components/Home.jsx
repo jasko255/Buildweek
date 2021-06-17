@@ -1,5 +1,5 @@
 import {
-  Container,
+  // Container,
   Card,
   Button,
   Row,
@@ -14,9 +14,9 @@ import {
 // import People from "./People";
 import { useEffect, useState } from "react";
 import SideAd from "./side-ad";
-import MiniProfileCard from "./profile-card";
-import YouKnow from "./people-you-may-know";
-import AlsoView from "./people-also-viewed";
+// import MiniProfileCard from "./profile-card";
+// import YouKnow from "./people-you-may-know";
+// import AlsoView from "./people-also-viewed";
 
 const Home = () => {
   const [posts, setPosts] = useState(null);
@@ -198,7 +198,7 @@ const Home = () => {
                 <Card.Body>
                   <Card.Title>Special title treatment</Card.Title>
                   <Card.Text>{el.text}</Card.Text>
-                  <img src={`https://picsum.photos/20${i}`} max-width="100px" />
+                  <img src={`https://picsum.photos/20${i}`} max-width="100px" alt='alternative' />
                 </Card.Body>
                 <ListGroup variant="flush">
                   <ListGroup.Item style={{ textAlign: "left" }}>

@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { Card, Row, Col, Modal, Button, Form } from 'react-bootstrap'
+import { Card, Modal, Button, Form } from 'react-bootstrap'
 
 class About extends Component {
     state = {

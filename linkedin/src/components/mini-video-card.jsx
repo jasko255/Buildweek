@@ -1,11 +1,11 @@
 import React, { Component, } from 'react';
 
-import { Card, Col, Button, Row } from 'react-bootstrap';
+import { Card, Col, Row } from 'react-bootstrap';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlayCircle, faPlay } from "@fortawesome/free-solid-svg-icons";
+import { faPlayCircle,  } from "@fortawesome/free-solid-svg-icons";
 
 import YTvid1 from "../assets/YTvideo1.png"
 

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown, faSearch } from "@fortawesome/free-solid-svg-icons"
 
 const NavBar = () => {
-  const searchHolder = <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
+  // const searchHolder = <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
   return (
     <Navbar expand="lg" id='navbarer' className="d-flex justify-content-center bg-white">
       <Container className="d-flex mx-auto px-5">

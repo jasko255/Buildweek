@@ -1,7 +1,6 @@
 import { Component } from 'react'
-import { Col, Row, ListGroup, Modal, Card, Button, Form, Image } from 'react-bootstrap'
+import { Col, Modal, Card, Button, Form, } from 'react-bootstrap'
 import ExperienceList from './ExperienceList'
-import ExperienceModal from './ExperienceModal'
 
 class Experience extends Component {
     state = {

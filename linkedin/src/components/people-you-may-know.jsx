@@ -1,13 +1,13 @@
 import React, { Component} from 'react';
 
-import { Card, Col, Button, Row } from 'react-bootstrap';
+import { Card, } from 'react-bootstrap';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
-import DefaultProfile from "../assets/default_profile.jpeg"
+// import DefaultProfile from "../assets/default_profile.jpeg"
 import MiniProfileCard from "./profile-card"
 
 import { withRouter, Link } from "react-router-dom";
@@ -97,7 +97,7 @@ class YouKnow extends Component {
 
 
     render() {
-        const showingMore = this.state.seeMore
+        // const showingMore = this.state.seeMore
         let cardDisplay 
         let footText
         let iconArrow
