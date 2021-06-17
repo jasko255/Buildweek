@@ -27,6 +27,7 @@ p.collapseAbout {
 
 .card {
   margin: 10px;
+  border-radius: 10px;
 }
 
 /* NAVBAR STYLES */
@@ -86,4 +87,8 @@ p.collapseAbout {
   font-weight:500 ;
   font-size: 14px!important;
 
+}
+
+.title {
+  font-size: small;
 }

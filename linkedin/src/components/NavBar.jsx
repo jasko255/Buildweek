@@ -68,7 +68,7 @@ const NavBar = () => {
             <div className="flex-col">
             <img width="30" src={defaultProf} height="30" alt="Janusz Kondziarz" id="ember30" className="global-nav__me-photo ember-view rounded-circle d-flex mx-auto my-1" />
             <NavDropdown title="Me" id="basic-nav-dropdown" className="d-flex px-auto mx-4" style={{ padding: "none" }}>
-              <img width="24" src="https://media-exp1.licdn.com/dms/image/C4D35AQEHGgKSN6gBWg/profile-framedphoto-shrink_100_100/0/1620813541179?e=1623758400&amp;v=beta&amp;t=UIBUH3lSa6dDteZWsYAslolpQE9_0aVj5TMq8BX8NXE" height="24" alt="Janusz Kondziarz" id="ember30" className="global-nav__me-photo ember-view" />
+              <img width="24" src="https://media-exp1.licdn.com/dms/image/C4D35AQEHGgKSN6gBWg/profile-framedphoto-shrink_400_400/0/1620813541179?e=1623769200&amp;v=beta&amp;t=XXSCoiZQhn2znwW9T6YHYgKWvhxfyNgtS6X2J5n6lGE" height="24" alt="Janusz Kondziarz" id="ember30" className="global-nav__me-photo ember-view" />
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>

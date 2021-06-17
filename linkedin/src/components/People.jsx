@@ -28,13 +28,20 @@ const People = (props) => {
   return (<>
         <Container fluid className="px-0">
     {
-        profile?.slice(0,55).map((el, idx) =>  {
-          let DefaultProfilePic
 
-        el.image? DefaultProfilePic = el.image : DefaultProfilePic = DefaultProfile
+//       ====================   Shakira's editing fixing key id's & broken images ===========================
+//         profile?.slice(0,55).map((el, idx) =>  {
+//           let DefaultProfilePic
 
-           return (
-            <Card id="idx" onClick={()=> props.history.push('/profile/' + el._id)}>            
+//         el.image? DefaultProfilePic = el.image : DefaultProfilePic = DefaultProfile
+
+//            return (
+//             <Card id="idx" onClick={()=> props.history.push('/profile/' + el._id)}>            
+//  =================================================================================================
+        profile?.map(el =>  (
+           
+            <Card onClick={()=> props.history.push('/profile/' + el._id)}>            
+
         <ListGroup variant="flush">
         
           <ListGroup.Item style={{textAlign: 'left'}}>

@@ -2,11 +2,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import './App.css';
-// import { Container } from 'react-bootstrap'
+
 import About from './components/About'
 import Experience from './components/Experience';
 
-
+import Home from './components/Home';
 
 
 import EditBar from './components/edit-profie'
@@ -41,6 +41,7 @@ function App() {
     // <div className="App">
       <Router>
 
+
         <Container fluid style={{ textAlign: 'left', padding: 0 }}>
           <NavBar id="navlinked"/>
             <Container>
@@ -64,6 +65,28 @@ function App() {
                     </Container>
                   </Row>
                 </Col>
+// ============. Before working APP.JSX =============================
+//         <NavBar id="navlinked"/>
+//         <Home />
+//         <Container style={{ textAlign: 'left' }}>
+//           {/* <NavBar id="navlinked"/> */}
+//           <Row fluid="false" className="flex-row">
+//             <Col md={8} className="d-flex ms-auto">
+//               <Container fluid="true">
+//                 <Route exact path="/" component={People} />
+//                 <Route exact path="/profile/:userId/" component={ProfDet} />
+//                 <Route exact path="/profile/:userId/" component={About} />
+//                 <Route exact path="/profile/:userId/" component={Experience} />
+//               </Container>
+//             </Col>
+//             <Col fluid="true" md={4} lg={4} className="d-inline-flex me-auto">
+//               <Row>
+//                 <EditBar className="col-12"></EditBar>
+//                 <SideAd className="col-12"></SideAd>
+//                 <AlsoView className="col-12"></AlsoView>
+//                 <YouKnow className="col-12"></YouKnow>
+//                 <LearningCard className="col-12"></LearningCard>
+// ======================================================================
               </Row>
             </Container>
         </Container>
