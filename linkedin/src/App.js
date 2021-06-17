@@ -2,11 +2,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import './App.css';
-// import { Container } from 'react-bootstrap'
+
 import About from './components/About'
 import Experience from './components/Experience';
 
-
+import Home from './components/Home';
 
 
 import EditBar from './components/edit-profie'
@@ -40,9 +40,10 @@ function App() {
 
     // <div className="App">
       <Router>
-
+        <NavBar id="navlinked"/>
+        <Home />
         <Container style={{ textAlign: 'left' }}>
-          <NavBar id="navlinked"/>
+          {/* <NavBar id="navlinked"/> */}
           <Row fluid="false" className="flex-row">
             <Col md={8} className="d-flex ms-auto">
               <Container fluid="true">
