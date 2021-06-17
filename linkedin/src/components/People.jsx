@@ -25,7 +25,7 @@ const People = (props) => {
   return (<>
         <Container>
     {
-        profile?.slice(0,55).map(el =>  (
+        profile?.map(el =>  (
            
             <Card onClick={()=> props.history.push('/profile/' + el._id)}>            
         <ListGroup variant="flush">

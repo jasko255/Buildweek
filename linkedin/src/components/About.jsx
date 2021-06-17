@@ -34,7 +34,7 @@ class About extends Component {
                 {/* <Col md={8}> */}
                 <Card >
                     <Card.Body className='pb-0'>
-                        <div className='d-flex'>
+                        <div className='d-flex justify-content-between'>
                             <h4 className='font-weight-normal'>About</h4>
                             <div className="ml-auto" onClick={this.handleShow}>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
@@ -47,7 +47,7 @@ class About extends Component {
                                 ? <p  >{this.state.about}</p>
                                 : <>
                                     <p className='collapseAbout mb-0' >{this.state.about}</p>
-                                    <span className='d-flex mb-2'>
+                                    <span className='d-flex justify-content-end mb-2'>
                                         {/* <span className='ml-auto'>...</span> */}
                                         <Button className='text-muted ml-auto pt-0' variant="link" onClick={this.handleExpand}>... see more</Button></span>
                                 </>
