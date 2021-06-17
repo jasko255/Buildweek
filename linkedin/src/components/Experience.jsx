@@ -44,6 +44,12 @@ class Experience extends Component {
         this.fetchExperiences()
     }
 
+    componentDidUpdate = async (prevProps, prepState) => {
+        if(prevProps.match.params.userId !== this.props.match.params.userId){
+            this.fetchExperiences()
+        }
+    }
+
     handleClose = () => this.setState({ show: false });
     handleShow = () => this.setState({ show: true });
 
