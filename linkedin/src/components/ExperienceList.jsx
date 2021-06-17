@@ -66,7 +66,7 @@ class ExperienceList extends Component {
                 </ListGroup.Item>
 
             </ListGroup>
-            <ExperienceModal experience={this.props.experience} show={this.state.show} onHide={this.handleClose} fetchExperiences={this.props.fetchExperiences}/>
+            <ExperienceModal userId={this.props.userId} experience={this.props.experience} show={this.state.show} onHide={this.handleClose} fetchExperiences={this.props.fetchExperiences}/>
             </>
         );
     }

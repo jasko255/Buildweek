@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { Form, Button, Modal, Col } from 'react-bootstrap'
+import { Form, Button, Modal, Col, Image } from 'react-bootstrap'
 
 class ExperienceModal extends Component {
     state = {
@@ -16,7 +16,7 @@ class ExperienceModal extends Component {
                 endDate: this.props.experience.endDate ? this.props.experience.endDate.slice(0,10) : '',
                 description: this.props.experience.description,
                 area: this.props.experience.area,
-                image: this.props.experience.image ? this.props.experience.image : '',
+                // image: this.props.experience.image ? this.props.experience.image : '',
             } 
         })
     }
@@ -46,16 +46,13 @@ class ExperienceModal extends Component {
                 }
             })
             if(response.ok) {
-                const data = await response.json()
-                console.log(data)
+                // const data = await response.json()
+                // console.log(data)
                 this.props.fetchExperiences()
                 this.props.onHide()
             } else {
                 console.log('we had a problem')
             }
-            const data = await response.json()
-            console.log(data)
-           
         } catch (err) {
             console.log(err)
         }
@@ -75,10 +72,43 @@ class ExperienceModal extends Component {
                 }
             })
             if(response.ok) {
-                const data = await response.json()
-                console.log(data)
+                // const data = await response.json()
+                // console.log(data)
                 this.props.fetchExperiences()
                 this.props.onHide()
+            } else {
+                console.log('we had a problem')
+            }
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+    editPicture = async (e) => {
+
+        const userId = this.props.userId
+        const expId = this.state.experience._id
+        console.log(userId)
+        console.log(expId)
+        
+        const newLogo = new FormData()
+        newLogo.append('experience', e.target.files[0])
+
+        // console.log(e.target.files[0])
+        // console.log(newLogo)
+    
+        const apiToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM4OTcxNmMxOTMwNTAwMTU4NzE1NDYiLCJpYXQiOjE2MjM3NTg2MTQsImV4cCI6MTYyNDk2ODIxNH0.a8nHWd_m6aYBbyPS4CFTexm_WJ0_K-ZBPC_4QapdJ8c'
+        try {
+            const response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences/${expId}/picture`, {
+                method: 'POST',
+                body: newLogo,
+                headers: {
+                    "Authorization": `Bearer ${apiToken}`,
+                }
+            })
+            if(response.ok) {
+                console.log(response)
+                // setShow(false)
             } else {
                 console.log('we had a problem')
             }
@@ -102,6 +132,7 @@ class ExperienceModal extends Component {
                         <Form.Label className="text-muted">Company</Form.Label>
                         <Form.Control id='company' type="text" placeholder="Enter Company name" value={this.state.experience.company} onChange={(e) => this.inputChange(e)} />
                     </Form.Group>
+                    
                     <Form.Row>
                         <Form.Group as={Col}>
                             <Form.Label className="text-muted">Start Date</Form.Label>
@@ -121,6 +152,13 @@ class ExperienceModal extends Component {
                             onChange={(e) => this.inputChange(e)}
                         />
                     </Form.Group>
+                    <Form.Group className='m-3'>
+                        <Image src={this.props.experience.image ? this.props.experience.image : ''} roundedCircle fluid style={{ width: 100, height: 100 }} />
+                    </Form.Group>
+                    <Form.Group className='my-3'>
+                        <Form.Label className='text-mutted mb-3' size="sm"> Upload New Company Logo</Form.Label>
+                        <Form.File id="image" onChange={(e) => this.editPicture(e)}/>
+                    </Form.Group >
 
                     <Button className='mt-3' variant="primary" type="submit" onClick={this.editExperience}>
                         Update

@@ -81,13 +81,10 @@ const ProfileSection = ({obj}) => {
   const handleShow2 = () => setShow2(true);
 
   const editPicture = async (e) => {
-    // e.preventDefault() 
 
     const newPicture = new FormData()
     newPicture.append('profile', e.target.files[0])
 
-    console.log(e.target.files[0])
-    console.log(newPicture)
     const apiToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM4OTcxNmMxOTMwNTAwMTU4NzE1NDYiLCJpYXQiOjE2MjM3NTg2MTQsImV4cCI6MTYyNDk2ODIxNH0.a8nHWd_m6aYBbyPS4CFTexm_WJ0_K-ZBPC_4QapdJ8c'
     try {
         const response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/60c89716c193050015871546/picture`, {
@@ -95,19 +92,13 @@ const ProfileSection = ({obj}) => {
             body: newPicture,
             headers: {
                 "Authorization": `Bearer ${apiToken}`,
-                // "Content-type": "application/json"
             }
         })
         if(response.ok) {
-            // const data = await response.json()
-            // console.log(data)
             setShow(false)
         } else {
             console.log('we had a problem')
         }
-        // const data = await response.json()
-        // console.log(data)
-       
     } catch (err) {
         console.log(err)
     }
