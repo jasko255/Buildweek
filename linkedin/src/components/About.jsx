@@ -1,12 +1,23 @@
 import { Component } from 'react'
-import { Card, Modal, Button, Form } from 'react-bootstrap'
+import { Card, Button, } from 'react-bootstrap'
 
 class About extends Component {
     state = {
-        about: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt doloremque quas repudiandae excepturi beatae velit accusantium tempore aliquam libero blanditiis nihil illo, similique quia consequuntur optio obcaecati asperiores corrupti deserunt dolorem, possimus commodi! Inventore, possimus consequatur unde accusamus a culpa, quis, eligendi atque dolore libero est quae aliquid rem accusantium. Eos dolorem nesciunt beatae libero provident doloribus eum corporis, accusamus ad totam corrupti repellat neque ducimus, officiis iure facilis ullam maiores. Odit illo minima nisi ex eveniet pariatur, rem iusto ipsam minus porro fuga officiis nam voluptates sapiente nulla accusamus nihil! Nesciunt pariatur cum iusto vitae perspiciatis? Atque, voluptates error.',
+        about: '',
         show: false,
         expand: false,
     }
+
+    componentDidUpdate = (prevProps, prevState) => {
+        console.log(this.props.bio)
+        if((prevProps.bio !== this.props.bio) && (this.props.bio !== undefined)) {
+            this.setState({
+                ...this.state,
+                about: this.props.bio 
+            })
+        } 
+    }
+
     inputChange = (e) => {
         this.setState({
             ...this.state,
@@ -36,10 +47,12 @@ class About extends Component {
                     <Card.Body className='pb-0'>
                         <div className='d-flex justify-content-between'>
                             <h4 className='font-weight-normal'>About</h4>
-                            <div className="ml-auto" onClick={this.handleShow}>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
+                            <div className="ml-auto" 
+                            // onClick={this.handleShow}
+                            >
+                                {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
                                     <path d="M21.13 2.86a3 3 0 00-4.17 0l-13 13L2 22l6.19-2L21.13 7a3 3 0 000-4.16zM6.77 18.57l-1.35-1.34L16.64 6 18 7.35z"></path>
-                                </svg>
+                                </svg> */}
                             </div>
                         </div>
                         <div className='box'>
@@ -57,7 +70,7 @@ class About extends Component {
                     {/* <Button className='ml-auto' variant="link"><small>...see more</small></Button> */}
                 </Card>
                 {/* </Col> */}
-                <Modal size="lg" show={this.state.show} onHide={this.ButtonhandleClose}>
+                {/* <Modal size="lg" show={this.state.show} onHide={this.ButtonhandleClose}>
                     <Modal.Header closeButton>
                         <Modal.Title>Edit about</Modal.Title>
                     </Modal.Header>
@@ -68,14 +81,11 @@ class About extends Component {
                         </Form.Group>
                     </Modal.Body>
                     <Modal.Footer>
-                        {/* <Button variant="secondary" onClick={this.handleClose}>
-                            Close
-                        </Button> */}
                         <Button variant="primary" onClick={this.handleClose}>
                             Save
                         </Button>
                     </Modal.Footer>
-                </Modal>
+                </Modal> */}
                 {/* </Row> */}
             </>
         );

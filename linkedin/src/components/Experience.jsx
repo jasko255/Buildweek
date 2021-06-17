@@ -104,8 +104,8 @@ class Experience extends Component {
     render() {
         return (
             <>
-                {/* <Row> */}
-                {/* <Col md={8}> */}
+                {/* <Row>
+                <Col md={8}> */}
                 <Card >
                     <div className='d-flex justify-content-between p-3'>
                         <h4 className='font-weight-normal'>Experience</h4>
@@ -171,8 +171,8 @@ class Experience extends Component {
                         </Button> */}
                     </Modal.Footer>
                 </Modal>
-                {/* </Col> */}
-                {/* </Row> */}
+                {/* </Col>
+                </Row> */}
             </>
         );
     }

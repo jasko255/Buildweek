@@ -152,13 +152,15 @@ class ExperienceModal extends Component {
                             onChange={(e) => this.inputChange(e)}
                         />
                     </Form.Group>
-                    <Form.Group className='m-3'>
-                        <Image src={this.props.experience.image ? this.props.experience.image : ''} roundedCircle fluid style={{ width: 100, height: 100 }} />
-                    </Form.Group>
-                    <Form.Group className='my-3'>
-                        <Form.Label className='text-mutted mb-3' size="sm"> Upload New Company Logo</Form.Label>
-                        <Form.File id="image" onChange={(e) => this.editPicture(e)}/>
-                    </Form.Group >
+                    <Form.Row>
+                        <Form.Group as={Col} className='m-3'>
+                            <Image src={this.props.experience.image ? this.props.experience.image : ''} rounded fluid style={{ width: 100, height: 100 }} />
+                        </Form.Group>
+                        <Form.Group as={Col} className='my-3'>
+                            <Form.Label className='text-mutted mb-3' size="sm"> Upload New Company Logo</Form.Label>
+                            <Form.File id="image" onChange={(e) => this.editPicture(e)}/>
+                        </Form.Group >
+                    </Form.Row>
 
                     <Button className='mt-3' variant="primary" type="submit" onClick={this.editExperience}>
                         Update

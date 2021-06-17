@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Col, Card, Button, Modal, Form, Image } from "react-bootstrap";
+import About from "./About";
 // import { propTypes } from "react-bootstrap/esm/Image";
 
 
@@ -161,6 +162,7 @@ const ProfileSection = ({obj}) => {
           </Container>
         </Card.Body>
       </Card>
+      <About bio={profile.bio}/>
 
       <Modal size="lg" show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -217,8 +219,9 @@ const ProfileSection = ({obj}) => {
             <Form.Group className='text-center'>
               <Image src={obj?.image} roundedCircle fluid style={{ width: 300, height: 300 }} />
             </Form.Group>
-            <Form.Group className='mt-5'>
-              <Form.File  id="image" label="Select Picture --> " onChange={editPicture}/>
+            <Form.Group className='m-3'>
+              <Form.Label className='text-mutted mb-3' size="sm"> Upload New Profile Picture</Form.Label>
+              <Form.File  id="image"  onChange={editPicture}/>
             </Form.Group >
             <Form.Row className='d-flex justify-content-end'>
               <Button className='m-2' variant="primary" type="submit" >

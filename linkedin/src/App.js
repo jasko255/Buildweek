@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import './App.css';
 
-import About from './components/About'
+// import About from './components/About'
 import Experience from './components/Experience';
 
 import Home from './components/Home';
@@ -49,7 +49,7 @@ function App() {
                 <Route exact path="/" component={Home} />
                 <Route exact path="/" component={People} />
                 <Route exact path="/profile/:userId/" component={ProfDet} />
-                <Route exact path="/profile/:userId/" component={About} />
+                {/* <Route exact path="/profile/:userId/" component={About} /> */}
                 <Route exact path="/profile/:userId/" component={Experience} />
               </Container>
             </Col>
