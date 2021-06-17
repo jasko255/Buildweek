@@ -26,41 +26,37 @@ const People = (props) => {
   }, []);
 
   return (<>
-        <Container fluid className="px-0">
-    {
+    <Container fluid className="px-0">
+      {
 
-//       ====================   Shakira's editing fixing key id's & broken images ===========================
-//         profile?.slice(0,55).map((el, idx) =>  {
-//           let DefaultProfilePic
+        profile?.map(el => {
+          let DefaultProfilePic
 
-//         el.image? DefaultProfilePic = el.image : DefaultProfilePic = DefaultProfile
+          el.image ? DefaultProfilePic = el.image : DefaultProfilePic = DefaultProfile
 
-//            return (
-//             <Card id="idx" onClick={()=> props.history.push('/profile/' + el._id)}>            
-//  =================================================================================================
-        profile?.map(el =>  (
-           
-            <Card onClick={()=> props.history.push('/profile/' + el._id)}>            
+          return (
+            <Card key={el._id} onClick={() => props.history.push('/profile/' + el._id)}>
 
-        <ListGroup variant="flush">
-        
-          <ListGroup.Item style={{textAlign: 'left'}}>
-              <Row>
-                  <Col md="auto">
-              <img style={{ width: "3em", height: "3em" }} src={DefaultProfilePic} onError={(e)=>{e.target.onerror = "null"; e.target.src=DefaultProfile}} alt='1' className="rounded-circle my-2"/> 
-              </Col>
-              <Col className='ml-auto mt-2'>
-              {el.name} {el.surname} {el.title} 
-              </Col>
-              </Row>
-              </ListGroup.Item>
-        </ListGroup>
-      </Card>     
-     
-        )} )
-  } </Container></>
-    );
-  };
+              <ListGroup variant="flush">
+
+                <ListGroup.Item style={{ textAlign: 'left' }}>
+                  <Row>
+                    <Col md="auto">
+                      <img style={{ width: "3em", height: "3em" }} src={DefaultProfilePic} onError={(e) => { e.target.onerror = "null"; e.target.src = DefaultProfile }} alt='1' className="rounded-circle my-2" />
+                    </Col>
+                    <Col className='ml-auto mt-2'>
+                      {el.name} {el.surname} {el.title}
+                    </Col>
+                  </Row>
+                </ListGroup.Item>
+              </ListGroup>
+            </Card>
+
+          )
+        })
+      } </Container></>
+  );
+};
   
 
 

@@ -81,12 +81,12 @@ const Home = () => {
 
   return (
     <>
-      <Container>
+      {/* <Container> */}
         <Row>
-          <Col md={2}>
+          <Col md={4}>
             <SideAd />
           </Col>
-          <Col md={6} className=''>
+          <Col md={8} className=''>
             <Card>
               <Row className="mt-3">
                 <Col md={1}>
@@ -300,14 +300,14 @@ const Home = () => {
               </Card>
             ))}
           </Col>
-          <Col md={4}>
+          {/* <Col md={4}>
             <MiniProfileCard />
             <YouKnow />
 
             <SideAd />
-          </Col>
+          </Col> */}
         </Row>
-      </Container>
+      {/* </Container> */}
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
