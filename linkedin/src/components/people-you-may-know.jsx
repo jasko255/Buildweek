@@ -1,4 +1,4 @@
-import React, { Component, } from 'react';
+import React, { Component} from 'react';
 
 import { Card, Col, Button, Row } from 'react-bootstrap';
 
@@ -9,6 +9,8 @@ import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 import DefaultProfile from "../assets/default_profile.jpeg"
 import MiniProfileCard from "./profile-card"
+
+import { withRouter, Link } from "react-router-dom";
 
 
 class YouKnow extends Component {
@@ -88,6 +90,10 @@ class YouKnow extends Component {
           }));
       }
 
+    //   goProfile () { 
+    //     this.props.history.push('/profile/' + this.state.id); 
+    //   } 
+
 
 
     render() {
@@ -106,19 +112,26 @@ class YouKnow extends Component {
 
         // if seemore true map 12 if see more false map 6
       return (
+          
         <Card fluid="true" className="d-flex px-0">
             <Card.Header style={{fontSize: '20px', fontWeight: 'bold' }} className="bg-white border-bottom-0 mt-3">
                 <p className="mb-0 ms-2">People you may know</p>
             </Card.Header>
             <Card.Body className="ps-2 pb-0 mb-0">
-            {this.state.zeroFive?.map((item, idx) => (
-                <MiniProfileCard usertitle={item.title} username={item.name} usersurname={item.surname} key={idx} id={item._id} userimg={item.image}/>
-            ))}              
+            {this.state.zeroFive?.map((item, idx) => {
+                return (
+                    <Link to={`/profile/${item._id}`}>
+                        <MiniProfileCard usertitle={item.title} username={item.name} usersurname={item.surname} key={idx} id={item._id} userimg={item.image} />
+                    </Link>
+            )})}            
             </Card.Body>
             <Card.Body style = {{ display: cardDisplay }} className="pb-0 pt-0">
-            {this.state.fiveTen?.map((item2, idx2) => (
-                <MiniProfileCard usertitle={item2.title} username={item2.name} usersurname={item2.surname} key={idx2+5} id={item2._id} userimg={item2.image}/>
-             ))}
+            {this.state.fiveTen?.map((item2, idx2) => {
+                return (
+                    <Link to={`/profile/${item2._id}`}>
+                        <MiniProfileCard usertitle={item2.title} username={item2.name} usersurname={item2.surname} key={idx2+5} id={item2._id} userimg={item2.image}/>
+                    </Link>
+            )})}
             </Card.Body>
 
             <Card.Footer className="text-center align-items-center py-3" style={{fontSize: '18px', fontWeight: 'bold' }}>
@@ -131,4 +144,4 @@ class YouKnow extends Component {
       }
 
 
-export default YouKnow
+export default withRouter(YouKnow)

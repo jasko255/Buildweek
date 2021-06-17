@@ -10,6 +10,7 @@ import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import DefaultProfile from "../assets/default_profile.jpeg"
 import MiniProfileCard from "./profile-card"
 
+import { withRouter, Link } from "react-router-dom";
 
 class AlsoView extends Component {
 
@@ -106,14 +107,20 @@ class AlsoView extends Component {
                 <p className="mb-0 ms-2">People you may know</p>
             </Card.Header>
             <Card.Body className="ps-2 pb-0 mb-0">
-            {this.state.zeroFive?.map((item, idx) => (
-                <MiniProfileCard usertitle={item.title} username={item.name} usersurname={item.surname} key={idx} id={item._id} userimg={item.image}/>
-            ))}              
+            {this.state.zeroFive?.map((item, idx) => {
+                return (
+                    <Link to={`/profile/${item._id}`}>
+                        <MiniProfileCard usertitle={item.title} username={item.name} usersurname={item.surname} key={idx} id={item._id} userimg={item.image}/>
+                    </Link>
+             )})}            
             </Card.Body>
             <Card.Body style = {{ display: cardDisplay }} className="pb-0 pt-0">
-            {this.state.fiveTen?.map((item2, idx2) => (
-                <MiniProfileCard usertitle={item2.title} username={item2.name} usersurname={item2.surname} key={idx2+5} id={item2._id} userimg={item2.image}/>
-             ))}
+            {this.state.fiveTen?.map((item2, idx2) => {
+                return (
+                    <Link to={`/profile/${item2._id}`}>
+                        <MiniProfileCard usertitle={item2.title} username={item2.name} usersurname={item2.surname} key={idx2+5} id={item2._id} userimg={item2.image}/>
+                    </Link>
+             )})}
             </Card.Body>
 
             <Card.Footer className="text-center align-items-center py-3" style={{fontSize: '18px', fontWeight: 'bold' }}>
@@ -126,4 +133,4 @@ class AlsoView extends Component {
       }
 
 
-export default AlsoView
+export default withRouter(AlsoView)

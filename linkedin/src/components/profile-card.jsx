@@ -1,10 +1,10 @@
-import React, { Component, } from 'react';
+import React, { Component, Link } from 'react';
 
 import { Card, Col, Button, Row, Container } from 'react-bootstrap';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import history from './history'
+// import history from './history'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
@@ -29,11 +29,11 @@ class MiniProfileCard extends Component {
         // userimg2:"",
     }
 
-    goProfile () { 
-        const { match: history } = this.props
+    // goProfile () { 
+    //     const { match: history } = this.props
 
-        this.props.history.push('/profile/' + this.state.id); 
-      } 
+    //     this.props.history.push('/profile/' + this.state.id); 
+    //   } 
 
     render () {
 
@@ -42,6 +42,7 @@ class MiniProfileCard extends Component {
         this.props.userimg? DefaultProfilePic = this.props.userimg : DefaultProfilePic = DefaultProfile
 
         return (
+            // <Link to={`/profile/${this.props.useridx}`}>
             <Card fluid="true" className="d-flex border border-white mt-3 mb-4" onClick={this.goProfile}>
                 <Container fluid className="px-0 mx-0">
                     <Row>
@@ -57,7 +58,7 @@ class MiniProfileCard extends Component {
                     
                 </Container>
             </Card>
-
+            // </Link>
         )}
 
 }

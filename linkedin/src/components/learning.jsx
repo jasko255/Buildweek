@@ -32,7 +32,7 @@ class LearningCard extends Component {
             <Card.Subtitle style={{ fontSize: '18px' }} className="my-2 px-4">
                         Add new skills with these courses, free for 24 hours
             </Card.Subtitle>
-            <Card.Body className="ps-2 ">
+            <Card.Body className="ps-2">
                 <MiniVideoCard></MiniVideoCard>
             </Card.Body>
             <Card.Footer className="text-center align-items-center py-3" style={{fontSize: '18px', fontWeight: 'bold' }}>
