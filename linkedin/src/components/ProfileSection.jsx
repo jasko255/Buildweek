@@ -4,16 +4,16 @@ import { propTypes } from "react-bootstrap/esm/Image";
 
 
 const ProfileSection = ({obj}) => {
-  console.log(obj)
+  // console.log(obj)
   
   const [profile, setProfile] = useState({
     // "_id": "5d84937322b7b54d848eb41b", //server generated
-      name: obj.name,
-      surname: obj.surname,
-      email: obj.email,
-      bio: obj.bio,
-      title: obj.title,
-      area: obj.area,
+      name: '',
+      surname: '',
+      email: '',
+      bio: '',
+      title: '',
+      area: '',
     // image: obj.image ? obj.image : '', //server generated on upload
     // "username": "admin", //server generated from Auth
     // "createdAt": "2019-09-20T08:53:07.094Z", //server generated
@@ -21,16 +21,17 @@ const ProfileSection = ({obj}) => {
     // "__v": 0 //server generated
   }
 )
-  // useEffect(() => {
-  //   setProfile({
-  //     name: obj.name,
-  //     surname: obj.surname,
-  //     email: obj.email,
-  //     bio: obj.bio,
-  //     title: obj.title,
-  //     area: obj.area,
-  //   })
-  // },[])
+
+  useEffect(() => {
+    setProfile({
+      name: obj?.name,
+      surname: obj?.surname,
+      email: obj?.email,
+      bio: obj?.bio,
+      title: obj?.title,
+      area: obj?.area,
+    })
+  },[obj])
 
   const [show, setShow] = useState(false);
 
@@ -47,9 +48,10 @@ const ProfileSection = ({obj}) => {
   const editProfile = async (e) => {
     e.preventDefault() 
 
+    // console.log(profile)
     const apiToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM4OTcxNmMxOTMwNTAwMTU4NzE1NDYiLCJpYXQiOjE2MjM3NTg2MTQsImV4cCI6MTYyNDk2ODIxNH0.a8nHWd_m6aYBbyPS4CFTexm_WJ0_K-ZBPC_4QapdJ8c'
     try {
-        const response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/me`, {
+        const response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/`, {
             method: 'PUT',
             body: JSON.stringify(profile),
             headers: {
@@ -60,9 +62,7 @@ const ProfileSection = ({obj}) => {
         if(response.ok) {
             const data = await response.json()
             console.log(data)
-
-            // this.props.fetchExperiences()
-            this.props.onHide()
+            setShow(false)
         } else {
             console.log('we had a problem')
         }
@@ -165,17 +165,14 @@ const ProfileSection = ({obj}) => {
               <Form.Control id='area' type="text" value={profile.area} onChange={e => inputChange(e)}/>
             </Form.Group>
 
-            {/* <Button variant="primary" type="submit">
-              Submit
-            </Button> */}
+            <Button className='mt-3' variant="primary" type="submit">
+              Save Changes
+            </Button>
           </Form>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
-          </Button>
-          <Button variant="primary" type="submit" onClick={handleClose}>
-            Save Changes
           </Button>
         </Modal.Footer>
       </Modal>

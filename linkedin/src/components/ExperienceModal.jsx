@@ -30,8 +30,6 @@ class ExperienceModal extends Component {
         })
     }
 
-   
-
     editExperience = async (e) => {
         e.preventDefault() 
 
@@ -124,7 +122,7 @@ class ExperienceModal extends Component {
                         />
                     </Form.Group>
 
-                    <Button variant="primary" type="submit" onClick={this.editExperience}>
+                    <Button className='mt-3' variant="primary" type="submit" onClick={this.editExperience}>
                         Update
                     </Button>
                 </Form>
