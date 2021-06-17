@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import { Card, Container, Row, Col,  ListGroup } from "react-bootstrap";
 
+import DefaultProfile from "../assets/default_profile.jpeg"
+
 const People = (props) => {
   const [profile, setProfile] = useState(null);
 
+  
   useEffect(() => {
     const getProfiles = async () => {
       let response = await fetch(
@@ -23,19 +26,23 @@ const People = (props) => {
   }, []);
 
   return (<>
-        <Container>
+        <Container fluid className="px-0">
     {
-        profile?.slice(0,55).map(el =>  (
-           
-            <Card onClick={()=> props.history.push('/profile/' + el._id)}>            
+        profile?.slice(0,55).map((el, idx) =>  {
+          let DefaultProfilePic
+
+        el.image? DefaultProfilePic = el.image : DefaultProfilePic = DefaultProfile
+
+           return (
+            <Card id="idx" onClick={()=> props.history.push('/profile/' + el._id)}>            
         <ListGroup variant="flush">
         
           <ListGroup.Item style={{textAlign: 'left'}}>
               <Row>
                   <Col md="auto">
-              <img style={{maxWidth: '50px', borderRadius:'50%'}} src={el.image} alt='1' /> 
+              <img style={{ width: "3em", height: "3em" }} src={DefaultProfilePic} onError={(e)=>{e.target.onerror = "null"; e.target.src=DefaultProfile}} alt='1' className="rounded-circle my-2"/> 
               </Col>
-              <Col className='ml-auto'>
+              <Col className='ml-auto mt-2'>
               {el.name} {el.surname} {el.title} 
               </Col>
               </Row>
@@ -43,7 +50,7 @@ const People = (props) => {
         </ListGroup>
       </Card>     
      
-         ) )
+        )} )
   } </Container></>
     );
   };

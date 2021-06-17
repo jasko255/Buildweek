@@ -41,27 +41,31 @@ function App() {
     // <div className="App">
       <Router>
 
-        <Container style={{ textAlign: 'left' }}>
+        <Container fluid style={{ textAlign: 'left', padding: 0 }}>
           <NavBar id="navlinked"/>
-          <Row fluid="false" className="flex-row">
-            <Col md={8} className="d-flex ms-auto">
-              <Container fluid="true">
-                <Route exact path="/" component={People} />
-                <Route exact path="/profile/:userId/" component={ProfDet} />
-                <Route exact path="/profile/:userId/" component={About} />
-                <Route exact path="/profile/:userId/" component={Experience} />
-              </Container>
-            </Col>
-            <Col fluid="true" md={4} lg={4} className="d-inline-flex me-auto">
-              <Row>
-                <EditBar className="col-12"></EditBar>
-                <SideAd className="col-12"></SideAd>
-                <AlsoView className="col-12"></AlsoView>
-                <YouKnow className="col-12"></YouKnow>
-                <LearningCard className="col-12"></LearningCard>
+            <Container>
+              <Row className="flex-row">
+                <Col fluid="true" md={8} className="d-inline-flex ml-auto mr-0">
+                  <Container fluid className="pe-0">
+                    <Route exact path="/" component={People} />
+                    <Route exact path="/profile/:userId/" component={ProfDet} />
+                    <Route exact path="/profile/:userId/" component={About} />
+                    <Route exact path="/profile/:userId/" component={Experience} />
+                  </Container>
+                </Col>
+                <Col fluid="true" md={4} className="d-inline-flex mr-auto ml-0">
+                  <Row>
+                    <Container fluid className="ps-0 pe-5">
+                      <EditBar className="col-12"></EditBar>
+                      <SideAd className="col-12"></SideAd>
+                      <AlsoView className="col-12"></AlsoView>
+                      <YouKnow className="col-12"></YouKnow>
+                      <LearningCard className="col-12"></LearningCard>
+                    </Container>
+                  </Row>
+                </Col>
               </Row>
-            </Col>
-          </Row>
+            </Container>
         </Container>
 
       </Router>

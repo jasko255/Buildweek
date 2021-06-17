@@ -106,16 +106,16 @@ class YouKnow extends Component {
 
         // if seemore true map 12 if see more false map 6
       return (
-        <Card fluid="true" style={{ width: '100%' }} className="d-flex px-0">
+        <Card fluid="true" className="d-flex px-0">
             <Card.Header style={{fontSize: '20px', fontWeight: 'bold' }} className="bg-white border-bottom-0 mt-3">
                 <p className="mb-0 ms-2">People you may know</p>
             </Card.Header>
-            <Card.Body className="ps-2">
+            <Card.Body className="ps-2 pb-0 mb-0">
             {this.state.zeroFive?.map((item, idx) => (
                 <MiniProfileCard usertitle={item.title} username={item.name} usersurname={item.surname} key={idx} id={item._id} userimg={item.image}/>
             ))}              
             </Card.Body>
-            <Card.Body style = {{ display: cardDisplay }}>
+            <Card.Body style = {{ display: cardDisplay }} className="pb-0 pt-0">
             {this.state.fiveTen?.map((item2, idx2) => (
                 <MiniProfileCard usertitle={item2.title} username={item2.name} usersurname={item2.surname} key={idx2+5} id={item2._id} userimg={item2.image}/>
              ))}

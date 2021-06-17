@@ -35,10 +35,16 @@ p.collapseAbout {
   color: rgb(10, 102, 194);
 }
 
-#global-nav-icon--mercado__my-network, #global-nav-icon--mercado__home, #global-nav-icon--mercado__jobs, #global-nav-icon--mercado__messaging, #global-nav-icon--mercado__notifications {
+#global-nav-icon--mercado__my-network, #global-nav-icon--mercado__home, #global-nav-icon--mercado__jobs, #global-nav-icon--mercado__messaging, #global-nav-icon--mercado__notifications, #global-nav-icon--classic__work {
   fill: #6c757d !important;
 
 }
+
+.nav-link {
+  padding: 2px;
+}
+
+
 
 
 .verticalLine {
