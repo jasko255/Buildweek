@@ -16,7 +16,7 @@ class SideAd extends Component {
 
     render() {
       return (
-        <Card fluid="true" style={{ width: '100%' }} className="d-flex">
+        <Card fluid="true" className="d-flex">
             <Card.Body fluid="true" className="container-fluid d-inine-flex px-4">
                 <Card.Title fluid="true" style={{fontSize: '1.2rem', fontWeight: '600'}} className="container-fluid d-inline-flex mx-0 px-0 mb-1 justify-content-end align-items-center">
                   <p style={{ fontWeight: '400', fontSize: '12px' }} className="d-inline-flex mb-0 d-inline-flex my-auto ml-0 mx-2 mt-0">Ad</p>
