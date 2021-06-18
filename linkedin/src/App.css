@@ -90,3 +90,17 @@ p.collapseAbout {
   font-size: small;
 }
 
+#photosvg{
+  color: rgb(112, 181, 249)
+}
+
+#videosvg{
+  color: rgb(127, 193, 94)
+}
+
+#eventsvg{
+  color: rgb(231, 163, 62)
+}
+#writeartsvg{
+  color: rgb(245, 152, 126)
+}
