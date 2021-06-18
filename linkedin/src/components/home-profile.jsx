@@ -48,14 +48,14 @@ class HomeProf extends Component {
                         <p className="d-flex container-fluid mb-0" style={{fontSize: '12px',}}>Grow your network</p>
                         
                     </ListGroup.Item>
-                    <ListGroup.Item className="d-flex px-0 py-0 py-0 pt-3 border-top px-3 rounded-0" style={{fontSize: '12px',}}>
-                        <p>Access exclusive tools & insights</p>
+                    <ListGroup.Item className="d-flex px-0 py-0 py-0 pt-3 border-top px-3 rounded-0 pb-0" style={{fontSize: '12px',}}>
+                        <p className="mb-0">Access exclusive tools & insights</p>
                         
                     </ListGroup.Item>
 
-                    <ListGroup.Item className="d-flex px-0 py-0 py-0 pb-3 border-bottom rounded-0" style={{fontSize: '12px',}}>
+                    <ListGroup.Item className="d-flex px-3 py-0 py-0 pb-3 border-bottom rounded-0 pt-0" style={{fontSize: '12px',}}>
                         
-                        <p>Try premium for free</p>
+                        <p className="mb-0">Try premium for free</p>
                     </ListGroup.Item>
                 
                 </ListGroup>
