@@ -104,9 +104,9 @@ class AlsoView extends Component {
       return (
         <Card fluid="true" className="d-flex px-0">
             <Card.Header style={{fontSize: '20px', fontWeight: 'bold' }} className="bg-white border-bottom-0 mt-3">
-                <p className="mb-0 ms-2">People you may know</p>
+                <p className="mb-0 ml-2">People also viewed</p>
             </Card.Header>
-            <Card.Body className="ps-2 pb-0 mb-0">
+            <Card.Body className="pl-2 pb-0 pt-1 mb-0">
             {this.state.zeroFive?.map((item, idx) => {
                 return (
                     <Link to={`/profile/${item._id}`}>
