@@ -48,7 +48,28 @@ const [newPic, setNewPic] = useState()
     getPosts();
   }, []);
 
+  // 60c71106291930001560ab94
 
+  const [profile, setProfile] = useState(null);
+
+  
+  useEffect(() => {
+    const getProfiles = async () => {
+      let response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/profile/60c89716c193050015871546",
+        {
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM4OTcxNmMxOTMwNTAwMTU4NzE1NDYiLCJpYXQiOjE2MjM3NTg2MTQsImV4cCI6MTYyNDk2ODIxNH0.a8nHWd_m6aYBbyPS4CFTexm_WJ0_K-ZBPC_4QapdJ8c",
+          },
+        }
+      );
+      let profiles = await response.json();
+      console.log("profiles", profiles);
+      setProfile(profiles);
+    };
+    getProfiles();
+  }, []);
 
 
 
@@ -62,7 +83,7 @@ const [newPic, setNewPic] = useState()
             headers: {
               'Content-type': 'application/json',
               Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM3MTEwNjI5MTkzMDAwMTU2MGFiOTQiLCJpYXQiOjE2MjM2NTg3NTksImV4cCI6MTYyNDg2ODM1OX0.wSLELEDQ8EvVaUT7VwhhllP7b8dSxFmkatWvybYtSvI",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM4OTcxNmMxOTMwNTAwMTU4NzE1NDYiLCJpYXQiOjE2MjM3NTg2MTQsImV4cCI6MTYyNDk2ODIxNH0.a8nHWd_m6aYBbyPS4CFTexm_WJ0_K-ZBPC_4QapdJ8c",
          
             }
           });
@@ -119,19 +140,20 @@ const [newPic, setNewPic] = useState()
     <>
       {/* <Container> */}
         <Row>
+
           <Col md={4} className="px-0">
             <HomeProf 
             // profImg={profile.image}
             />
           </Col>
-          <Col md={8} className=''>
+          <Col md={8} className='px-0'>
             <Card>
               <Row className="mt-3">
                 <Col md={1}>
                   <img
-                    width="50"
-                    src="https://media-exp1.licdn.com/dms/image/C4D35AQEHGgKSN6gBWg/profile-framedphoto-shrink_400_400/0/1620813541179?e=1623769200&amp;v=beta&amp;t=XXSCoiZQhn2znwW9T6YHYgKWvhxfyNgtS6X2J5n6lGE"
-                    height="50"
+                    width="40"
+                    src={profile?.image}
+                    height="40"
                     alt="Janusz Kondziarz"
                     id="ember30"
                     className="global-nav__me-photo ember-view rounded-circle d-flex ml-2"
@@ -141,7 +163,7 @@ const [newPic, setNewPic] = useState()
                 <Col md={10}>
                   <Button
                     variant="outline-secondary"
-                    className="badge-pill ml-4 mt-1 w-100 text-left"
+                    className="badge-pill ml-3 mt-1 w-100 text-left"
                     style={{ height: "95%", border: "1px solid grey" }}
                     onClick={handleShow}
                   >
@@ -150,13 +172,14 @@ const [newPic, setNewPic] = useState()
                 </Col>
               </Row>
               <Row className="mt-2">
-                <Col sm>
+                <Col sm className='ml-3 pb-2' >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
+                    id='photosvg'
                     viewBox="0 0 24 24"
                     data-supported-dps="24x24"
                     fill="currentColor"
-                    class="mercado-match"
+                    className="mercado-match"
                     width="24"
                     height="24"
                     focusable="false"
@@ -168,6 +191,7 @@ const [newPic, setNewPic] = useState()
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
+                    id='videosvg'
                     data-supported-dps="24x24"
                     fill="currentColor"
                     class="mercado-match"
@@ -182,6 +206,7 @@ const [newPic, setNewPic] = useState()
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
+                    id='eventsvg'
                     data-supported-dps="24x24"
                     fill="currentColor"
                     class="mercado-match"
@@ -196,6 +221,7 @@ const [newPic, setNewPic] = useState()
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
+                    id='writeartsvg'
                     data-supported-dps="24x24"
                     fill="currentColor"
                     class="mercado-match"
@@ -351,7 +377,7 @@ const [newPic, setNewPic] = useState()
             <Col xs={1}>
               <img
                 width="50"
-                src="https://media-exp1.licdn.com/dms/image/C4D35AQEHGgKSN6gBWg/profile-framedphoto-shrink_400_400/0/1620813541179?e=1623769200&amp;v=beta&amp;t=XXSCoiZQhn2znwW9T6YHYgKWvhxfyNgtS6X2J5n6lGE"
+                src={profile?.image}
                 height="50"
                 alt="Janusz Kondziarz"
                 id="ember30"
@@ -393,10 +419,10 @@ const [newPic, setNewPic] = useState()
             </Col>
           </Row>
         </Modal.Body>
-        <Modal.Footer >
+        <Modal.Footer style={{ textAlign: 'left' }} >
        <button style={{ border: "none", backgroundColor: "white" }}> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
   <path d="M19 4H5a3 3 0 00-3 3v10a3 3 0 003 3h14a3 3 0 003-3V7a3 3 0 00-3-3zm1 13a1 1 0 01-.29.71L16 14l-2 2-6-6-4 4V7a1 1 0 011-1h14a1 1 0 011 1zm-2-7a2 2 0 11-2-2 2 2 0 012 2z"></path>
-</svg> </button> <Form.File style={{ border: "none", backgroundColor: "white" }} onChange={grabPic} /> 
+</svg> </button> 
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
   <path d="M19 4H5a3 3 0 00-3 3v10a3 3 0 003 3h14a3 3 0 003-3V7a3 3 0 00-3-3zm-9 12V8l6 4z"></path>
@@ -410,7 +436,8 @@ const [newPic, setNewPic] = useState()
   <path d="M23 20v1H1v-1zM8 9H2v10h6zm7-6H9v16h6zm7 11h-6v5h6z"></path>
 </svg> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
   <path d="M14 12a2 2 0 11-2-2 2 2 0 012 2zM4 10a2 2 0 102 2 2 2 0 00-2-2zm16 0a2 2 0 102 2 2 2 0 00-2-2z"></path>
-</svg> <span className="verticalLine d-inline"> </span>
+</svg> 
+<Form.File style={{ border: "none", backgroundColor: "white" }} onChange={grabPic} /> 
 
           <Button variant="secondary" className='badge-pill ml-auto' onClick={createPost}>
             Post

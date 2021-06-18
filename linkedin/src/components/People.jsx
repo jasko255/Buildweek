@@ -36,20 +36,28 @@ const People = (props) => {
 
           return (
             <Card key={el._id} onClick={() => props.history.push('/profile/' + el._id)}>
+              {/* <Card> */}
 
-              <ListGroup variant="flush">
+              {/* <ListGroup variant="flush">
 
-                <ListGroup.Item style={{ textAlign: 'left' }}>
-                  <Row>
+                <ListGroup.Item style={{ textAlign: 'left' }}> */}
+                  <Row className='m-3'>
                     <Col md="auto">
                       <img style={{ width: "3em", height: "3em" }} src={DefaultProfilePic} onError={(e) => { e.target.onerror = "null"; e.target.src = DefaultProfile }} alt='1' className="rounded-circle my-2" />
                     </Col>
                     <Col className='ml-auto mt-2'>
-                      {el.name} {el.surname} {el.title}
+                      <Card.Title>
+                        {el.name} {el.surname}
+                      </Card.Title>
+                      <Card.Text>
+                        {el.title}
+                      </Card.Text>
+
                     </Col>
                   </Row>
-                </ListGroup.Item>
-              </ListGroup>
+                {/* </ListGroup.Item>
+              </ListGroup> */}
+              {/* </Card> */}
             </Card>
 
           )
