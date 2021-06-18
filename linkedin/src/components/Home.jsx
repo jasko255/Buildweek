@@ -119,7 +119,7 @@ const [newPic, setNewPic] = useState()
     <>
       {/* <Container> */}
         <Row>
-          <Col md={4}>
+          <Col md={4} className="px-0">
             <HomeProf 
             // profImg={profile.image}
             />
