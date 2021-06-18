@@ -114,7 +114,7 @@ const ProfileSection = ({obj}) => {
           className="w-100 "
           src="https://picsum.photos/200/300"
         />
-        {/* "https://media-exp1.licdn.com/dms/image/C4D35AQEHGgKSN6gBWg/profile-framedphoto-shrink_400_400/0/1620813541179?e=1623769200&amp;v=beta&amp;t=XXSCoiZQhn2znwW9T6YHYgKWvhxfyNgtS6X2J5n6lGE"  */}
+       
         <img onClick={handleShow2} width="150" src={obj?.image}
           height="150" alt="Edited"
           id="ember47"
