@@ -11,7 +11,8 @@ import {
 } from "react-bootstrap";
 
 import { useEffect, useState } from "react";
-import SideAd from "./side-ad";
+import HomeProf from "./home-profile";
+import { Profiler } from "react";
 
 
 const Home = () => {
@@ -139,8 +140,11 @@ const [newPic, setNewPic] = useState()
     <>
       {/* <Container> */}
         <Row>
-          <Col md={4} className='px-0'>
-            <SideAd />
+
+          <Col md={4} className="px-0">
+            <HomeProf 
+            // profImg={profile.image}
+            />
           </Col>
           <Col md={8} className='px-0'>
             <Card>
