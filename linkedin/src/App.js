@@ -49,7 +49,7 @@ function App() {
         <Container>
           <Row className="flex-row">
             <Col fluid="true" md={8} className="d-inline-flex ml-auto mr-0">
-              <Container fluid className="pe-0">
+              <Container fluid className="px-0">
                 <Route exact path="/" component={Home} />
                 <Route exact path="/search" component={People} />
                 <Route exact path="/profile/:userId/" component={ProfDet} />

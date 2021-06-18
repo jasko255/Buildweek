@@ -138,10 +138,10 @@ const [newPic, setNewPic] = useState()
     <>
       {/* <Container> */}
         <Row>
-          <Col md={4}>
+          <Col md={4} className='px-0'>
             <SideAd />
           </Col>
-          <Col md={8} className=''>
+          <Col md={8} className='px-0'>
             <Card>
               <Row className="mt-3">
                 <Col md={1}>
