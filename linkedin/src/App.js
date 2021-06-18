@@ -21,6 +21,10 @@ import LearningCard from './components/learning'
 import People from './components/People';
 import ProfDet from './components/ProfDet';
 import NavBar from './components/NavBar';
+import LinkLearn from './components/linked-learning';
+import TopCourse from './components/top-courses';
+
+
 
 import { Container, Row, Col } from 'react-bootstrap';
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -56,6 +60,8 @@ function App() {
             <Col fluid="true" md={4} className="d-inline-flex mr-auto ml-0">
               <Row>
                 <Container fluid className="ps-0 pe-5">
+                  <LinkLearn className="col-12"></LinkLearn>
+                  <TopCourse className="col-12"></TopCourse>
                   <EditBar className="col-12"></EditBar>
                   <SideAd className="col-12"></SideAd>
                   <AlsoView className="col-12"></AlsoView>
