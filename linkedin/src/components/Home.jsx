@@ -9,14 +9,10 @@ import {
   
   Form  
 } from "react-bootstrap";
-// import NavBar from './NavBar'
-// import ProfileSection from './ProfileSection'
-// import People from "./People";
+
 import { useEffect, useState } from "react";
 import SideAd from "./side-ad";
-// import MiniProfileCard from "./profile-card";
-// import YouKnow from "./people-you-may-know";
-// import AlsoView from "./people-also-viewed";
+
 
 const Home = () => {
   const [posts, setPosts] = useState(null);
@@ -27,25 +23,27 @@ const Home = () => {
 
 })
 
+const [newPic, setNewPic] = useState()
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const getPosts = async () => {
+    let response = await fetch(
+      "https://striveschool-api.herokuapp.com/api/posts/",
+      {
+        headers: {
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM3MTEwNjI5MTkzMDAwMTU2MGFiOTQiLCJpYXQiOjE2MjM2NTg3NTksImV4cCI6MTYyNDg2ODM1OX0.wSLELEDQ8EvVaUT7VwhhllP7b8dSxFmkatWvybYtSvI",
+        },
+      }
+    );
+    let posts = await response.json();
+    setPosts(posts.reverse());
+  };
   useEffect(() => {
-    const getPosts = async () => {
-      let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/posts/",
-        {
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM3MTEwNjI5MTkzMDAwMTU2MGFiOTQiLCJpYXQiOjE2MjM2NTg3NTksImV4cCI6MTYyNDg2ODM1OX0.wSLELEDQ8EvVaUT7VwhhllP7b8dSxFmkatWvybYtSvI",
-          },
-        }
-      );
-      let posts = await response.json();
-      setPosts(posts);
-    };
     getPosts();
   }, []);
 
@@ -53,7 +51,7 @@ const Home = () => {
 
 
 
-  useEffect(() => {}, []);
+  useEffect(() => {}, [posts]);
 
     const createPost = async () => {
         try {
@@ -68,7 +66,14 @@ const Home = () => {
             }
           });
             if(response.ok) {
+              const res = await response.json()
+              const postId = res._id
+              console.log('my response',postId, res)
+              postAPic( postId)
             alert('data saved successfully')
+              getPosts()
+
+            // postAPic
           }
           } catch(e) {
             console.log(e);
@@ -77,7 +82,37 @@ const Home = () => {
      
       
     };
+
+      // const newPicture = null
+
+    const grabPic = (e) => {
+       let newPicture = new FormData()
+              newPicture.append('post', e.target.files[0])
+             setNewPic(newPicture)
+    }
    
+    const postAPic = async ( postId) => {
+
+    
+  
+      const apiToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM3MTEwNjI5MTkzMDAwMTU2MGFiOTQiLCJpYXQiOjE2MjM2NTg3NTksImV4cCI6MTYyNDg2ODM1OX0.wSLELEDQ8EvVaUT7VwhhllP7b8dSxFmkatWvybYtSvI'
+      try {
+          const response = await fetch(`https://striveschool-api.herokuapp.com/api/posts/${postId}`, {
+              method: 'POST',
+              body: newPic,
+              headers: {
+                  "Authorization": `Bearer ${apiToken}`,
+              }
+          })
+          if(response.ok) {
+              setShow(false)
+          } else {
+              console.log('we had a problem')
+          }
+      } catch (err) {
+          console.log(err)
+      }
+    }
 
   return (
     <>
@@ -103,7 +138,7 @@ const Home = () => {
                 <Col md={10}>
                   <Button
                     variant="outline-secondary"
-                    className="badge-pill ml-3 mt-1 w-100 text-left"
+                    className="badge-pill ml-4 mt-1 w-100 text-left"
                     style={{ height: "95%", border: "1px solid grey" }}
                     onClick={handleShow}
                   >
@@ -170,7 +205,7 @@ const Home = () => {
                 </Col>
               </Row>
             </Card>
-            {posts?.reverse().slice(0, 10).map((el, i) => (
+            {posts?.slice(0, 50).map((el, i) => (
               <Card className="text-center">
                 <Card.Header>
                   {" "}
@@ -196,9 +231,9 @@ const Home = () => {
                   </Row>
                 </Card.Header>
                 <Card.Body>
-                  <Card.Title>Special title treatment</Card.Title>
+                  
                   <Card.Text>{el.text}</Card.Text>
-                  <img src={`https://picsum.photos/20${i}`} max-width="100px" alt='alternative' />
+                  <img src={el.image} max-width="100px" className='w-100' alt='alternative' />
                 </Card.Body>
                 <ListGroup variant="flush">
                   <ListGroup.Item style={{ textAlign: "left" }}>
@@ -300,12 +335,7 @@ const Home = () => {
               </Card>
             ))}
           </Col>
-          {/* <Col md={4}>
-            <MiniProfileCard />
-            <YouKnow />
-
-            <SideAd />
-          </Col> */}
+         
         </Row>
       {/* </Container> */}
 
@@ -361,9 +391,11 @@ const Home = () => {
           </Row>
         </Modal.Body>
         <Modal.Footer >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
+       <button style={{ border: "none", backgroundColor: "white" }}> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
   <path d="M19 4H5a3 3 0 00-3 3v10a3 3 0 003 3h14a3 3 0 003-3V7a3 3 0 00-3-3zm1 13a1 1 0 01-.29.71L16 14l-2 2-6-6-4 4V7a1 1 0 011-1h14a1 1 0 011 1zm-2-7a2 2 0 11-2-2 2 2 0 012 2z"></path>
-</svg> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
+</svg> </button> <Form.File style={{ border: "none", backgroundColor: "white" }} onChange={grabPic} /> 
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
   <path d="M19 4H5a3 3 0 00-3 3v10a3 3 0 003 3h14a3 3 0 003-3V7a3 3 0 00-3-3zm-9 12V8l6 4z"></path>
 </svg> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
   <path d="M3 3v15a3 3 0 003 3h9v-6h6V3zm9 8H6v-1h6zm6-3H6V7h12zm-2 8h5l-5 5z"></path>
@@ -382,6 +414,12 @@ const Home = () => {
           </Button>
         </Modal.Footer>
       </Modal>
+
+
+
+                
+
+
     </>
   );
 };
