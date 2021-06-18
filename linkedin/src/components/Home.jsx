@@ -143,7 +143,8 @@ const [newPic, setNewPic] = useState()
 
           <Col md={4} className="px-0">
             <HomeProf 
-            // profImg={profile.image}
+            profImg={profile?.image}
+            profName={profile?.name}
             />
           </Col>
           <Col md={8} className='px-0'>
