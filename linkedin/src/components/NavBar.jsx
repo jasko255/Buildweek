@@ -3,9 +3,36 @@ import defaultProf from '../assets/default_profile.jpeg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown, faSearch } from "@fortawesome/free-solid-svg-icons"
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 const NavBar = () => {
   // const searchHolder = <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
+
+
+
+  const [profile, setProfile] = useState(null);
+
+  
+  useEffect(() => {
+    const getProfiles = async () => {
+      let response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/profile/60c89716c193050015871546",
+        {
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM3MTEwNjI5MTkzMDAwMTU2MGFiOTQiLCJpYXQiOjE2MjM2NTg3NTksImV4cCI6MTYyNDg2ODM1OX0.wSLELEDQ8EvVaUT7VwhhllP7b8dSxFmkatWvybYtSvI",
+          },
+        }
+      );
+      let profiles = await response.json();
+      console.log("profiles", profiles);
+      setProfile(profiles);
+    };
+    getProfiles();
+  }, []);
+
+
+
   return (
     <Navbar expand="lg" id='navbarer' className="d-flex justify-content-center bg-white">
       <Container className="d-flex mx-auto px-5">
@@ -74,7 +101,7 @@ const NavBar = () => {
             </Nav.Link>
             <div className="flex-col">
               <Link to={'/profile/60c89716c193050015871546'}>
-                <img width="30" src={defaultProf} height="30" alt="Janusz Kondziarz" id="ember30" className="global-nav__me-photo ember-view rounded-circle d-flex mx-auto my-1" />
+                <img width="30" src={profile?.image} height="30" alt="Janusz Kondziarz" id="ember30" className="global-nav__me-photo ember-view rounded-circle d-flex mx-auto my-1" />
               </Link>
               <NavDropdown title="Me" id="basic-nav-dropdown" className="d-flex px-auto mx-4" style={{ padding: "none" }}>
                 <img width="24" src="https://media-exp1.licdn.com/dms/image/C4D35AQEHGgKSN6gBWg/profile-framedphoto-shrink_400_400/0/1620813541179?e=1623769200&amp;v=beta&amp;t=XXSCoiZQhn2znwW9T6YHYgKWvhxfyNgtS6X2J5n6lGE" height="24" alt="Janusz Kondziarz" id="ember30" className="global-nav__me-photo ember-view" />
