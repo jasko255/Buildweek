@@ -57,7 +57,7 @@ function App() {
                 <Route exact path="/profile/:userId/" component={Experience} />
               </Container>
             </Col>
-            <Col fluid="true" md={4} className="d-inline-flex mr-auto ml-0">
+            <Col fluid="true" md={4} className="d-inline-flex mr-auto ml-0 px-0">
               <Row>
                 <Container fluid className="ps-0 pe-5">
                   <LinkLearn className="col-12"></LinkLearn>

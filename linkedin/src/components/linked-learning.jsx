@@ -54,10 +54,10 @@ class LinkLearn extends Component {
                     <li class="list-group-item d-flex px-0">
                         <Container fluid className="px-0">
                             <div className="d-inline-flex mt-1 pt-1 px-0">
-                                <FontAwesomeIcon icon={faCircle} style={{ fontSize: "7px"}} className="d-flex mt-2 me-3"/>
+                                <FontAwesomeIcon icon={faCircle} style={{ fontSize: "7px"}} className="d-flex mt-2 mr-3"/>
                                 <Card.Title style={{ fontSize: "16px"}} className="d-flex mb-0">Firms welcome rent moratorium news</Card.Title>
                             </div>
-                            <div className="d-flex ms-4">
+                            <div className="d-flex ml-4">
                                 <Card.Text className="d-inline-flex  align-items-center">
                                     <p className="d-flex mb-0 text-secondary" style={{ fontSize: "12px"}}>14h ago</p> 
                                     <FontAwesomeIcon icon={faCircle} style={{ fontSize: "3px"}} className="d-flex mx-2 text-secondary"/> 
@@ -69,10 +69,10 @@ class LinkLearn extends Component {
                     <li class="list-group-item d-flex px-0">
                         <Container fluid className="px-0">
                             <div className="d-inline-flex mt-1 pt-1 px-0">
-                                <FontAwesomeIcon icon={faCircle} style={{ fontSize: "7px"}} className="d-flex mt-2 me-3"/>
+                                <FontAwesomeIcon icon={faCircle} style={{ fontSize: "7px"}} className="d-flex mt-2 mr-3"/>
                                 <Card.Title style={{ fontSize: "16px"}} className="d-flex mb-0">Oxford Circus to become a Piazza</Card.Title>
                             </div>
-                            <div className="d-flex ms-4">
+                            <div className="d-flex ml-4">
                                 <Card.Text className="d-inline-flex  align-items-center">
                                     <p className="d-flex mb-0 text-secondary" style={{ fontSize: "12px"}}>21h ago</p> 
                                     <FontAwesomeIcon icon={faCircle} style={{ fontSize: "3px"}} className="d-flex text-secondary mx-2"/> 
@@ -84,10 +84,10 @@ class LinkLearn extends Component {
                     <li class="list-group-item d-flex px-0">
                         <Container fluid className="px-0">
                             <div className="d-inline-flex mt-1 pt-1 px-0">
-                                <FontAwesomeIcon icon={faCircle} style={{ fontSize: "7px"}} className="d-flex mt-2 me-3"/>
+                                <FontAwesomeIcon icon={faCircle} style={{ fontSize: "7px"}} className="d-flex mt-2 mr-3"/>
                                 <Card.Title style={{ fontSize: "16px"}} className="d-flex">Are tattoos still taboo at worK?</Card.Title>
                             </div>
-                            <div className="d-flex ms-4">
+                            <div className="d-flex ml-4">
                                 <Card.Text className="d-inline-flex  align-items-center">
                                     <p className="d-flex mb-0 text-secondary" style={{ fontSize: "12px"}}>1d ago</p> 
                                     <FontAwesomeIcon icon={faCircle} style={{ fontSize: "6px"}} className="d-flex mx-2 text-secondary"/> 
@@ -99,10 +99,10 @@ class LinkLearn extends Component {
                     <li class="list-group-item d-flex px-0">
                         <Container fluid className="px-0">
                             <div className="d-inline-flex mt-1 pt-1 px-0">
-                                <FontAwesomeIcon icon={faCircle} style={{ fontSize: "7px"}} className="d-flex mt-2 me-3"/>
+                                <FontAwesomeIcon icon={faCircle} style={{ fontSize: "7px"}} className="d-flex mt-2 mr-3"/>
                                 <Card.Title style={{ fontSize: "16px"}} className="d-flex">'I had no idea how to get promoted'</Card.Title>
                             </div>
-                            <div className="d-flex ms-4">
+                            <div className="d-flex ml-4">
                                 <Card.Text className="d-inline-flex  align-items-center">
                                     <p className="d-flex mb-0 text-secondary" style={{ fontSize: "12px"}}>3d ago</p> 
                                     <FontAwesomeIcon icon={faCircle} style={{ fontSize: "6px"}} className="d-flex mx-2 text-secondary"/> 
@@ -114,10 +114,10 @@ class LinkLearn extends Component {
                     <li class="list-group-item d-flex px-0">
                         <Container fluid className="px-0">
                             <div className="d-inline-flex mt-1 pt-1 px-0">
-                                <FontAwesomeIcon icon={faCircle} style={{ fontSize: "7px"}} className="d-flex mt-2 me-3"/>
+                                <FontAwesomeIcon icon={faCircle} style={{ fontSize: "7px"}} className="d-flex mt-2 mr-3"/>
                                 <Card.Title style={{ fontSize: "16px"}} className="d-flex">Renting cheaper than buying UK</Card.Title>
                             </div>
-                            <div className="d-flex ms-4">
+                            <div className="d-flex ml-4">
                                 <Card.Text className="d-inline-flex  align-items-center">
                                     <p className="d-flex mb-0 text-secondary" style={{ fontSize: "12px"}}>3d ago</p> 
                                     <FontAwesomeIcon icon={faCircle} style={{ fontSize: "6px"}} className="d-flex mx-2 text-secondary"/> 
@@ -134,10 +134,10 @@ class LinkLearn extends Component {
                     <li class="list-group-item d-flex px-0">
                         <Container fluid className="px-0">
                             <div className="d-inline-flex mt-1 pt-1 px-0">
-                                <FontAwesomeIcon icon={faCircle} style={{ fontSize: "7px"}} className="d-flex mt-2 me-3"/>
+                                <FontAwesomeIcon icon={faCircle} style={{ fontSize: "7px"}} className="d-flex mt-2 mr-3"/>
                                 <Card.Title style={{ fontSize: "16px"}} className="d-flex mb-0">Firms welcome rent moratorium news</Card.Title>
                             </div>
-                            <div className="d-flex ms-4">
+                            <div className="d-flex ml-4">
                                 <Card.Text className="d-inline-flex  align-items-center">
                                     <p className="d-flex mb-0 text-secondary" style={{ fontSize: "12px"}}>14h ago</p> 
                                     <FontAwesomeIcon icon={faCircle} style={{ fontSize: "3px"}} className="d-flex mx-2 text-secondary"/> 
@@ -149,10 +149,10 @@ class LinkLearn extends Component {
                     <li class="list-group-item d-flex px-0">
                         <Container fluid className="px-0">
                             <div className="d-inline-flex mt-1 pt-1 px-0">
-                                <FontAwesomeIcon icon={faCircle} style={{ fontSize: "7px"}} className="d-flex mt-2 me-3"/>
+                                <FontAwesomeIcon icon={faCircle} style={{ fontSize: "7px"}} className="d-flex mt-2 mr-3"/>
                                 <Card.Title style={{ fontSize: "16px"}} className="d-flex mb-0">Euro 2020 stars 'snub' sponsors</Card.Title>
                             </div>
-                            <div className="d-flex ms-4">
+                            <div className="d-flex ml-4">
                                 <Card.Text className="d-inline-flex  align-items-center">
                                     <p className="d-flex mb-0 text-secondary" style={{ fontSize: "12px"}}>1d ago</p> 
                                     <FontAwesomeIcon icon={faCircle} style={{ fontSize: "3px"}} className="d-flex text-secondary mx-2"/> 
@@ -164,10 +164,10 @@ class LinkLearn extends Component {
                     <li class="list-group-item d-flex px-0">
                         <Container fluid className="px-0">
                             <div className="d-inline-flex mt-1 pt-1 px-0">
-                                <FontAwesomeIcon icon={faCircle} style={{ fontSize: "7px"}} className="d-flex mt-2 me-3"/>
+                                <FontAwesomeIcon icon={faCircle} style={{ fontSize: "7px"}} className="d-flex mt-2 mr-3"/>
                                 <Card.Title style={{ fontSize: "16px"}} className="d-flex">Legal action taken over travel list</Card.Title>
                             </div>
-                            <div className="d-flex ms-4">
+                            <div className="d-flex ml-4">
                                 <Card.Text className="d-inline-flex  align-items-center">
                                     <p className="d-flex mb-0 text-secondary" style={{ fontSize: "12px"}}>3h ago</p> 
                                     <FontAwesomeIcon icon={faCircle} style={{ fontSize: "6px"}} className="d-flex mx-2 text-secondary"/> 
@@ -179,10 +179,10 @@ class LinkLearn extends Component {
                     <li class="list-group-item d-flex px-0">
                         <Container fluid className="px-0">
                             <div className="d-inline-flex mt-1 pt-1 px-0">
-                                <FontAwesomeIcon icon={faCircle} style={{ fontSize: "7px"}} className="d-flex mt-2 me-3"/>
+                                <FontAwesomeIcon icon={faCircle} style={{ fontSize: "7px"}} className="d-flex mt-2 mr-3"/>
                                 <Card.Title style={{ fontSize: "16px"}} className="d-flex">Web source code for sale as NFT</Card.Title>
                             </div>
-                            <div className="d-flex ms-4">
+                            <div className="d-flex ml-4">
                                 <Card.Text className="d-inline-flex  align-items-center">
                                     <p className="d-flex mb-0 text-secondary" style={{ fontSize: "12px"}}>1d ago</p> 
                                     <FontAwesomeIcon icon={faCircle} style={{ fontSize: "6px"}} className="d-flex mx-2 text-secondary"/> 
@@ -194,10 +194,10 @@ class LinkLearn extends Component {
                     <li class="list-group-item d-flex px-0">
                         <Container fluid className="px-0">
                             <div className="d-inline-flex mt-1 pt-1 px-0">
-                                <FontAwesomeIcon icon={faCircle} style={{ fontSize: "7px"}} className="d-flex mt-2 me-3"/>
+                                <FontAwesomeIcon icon={faCircle} style={{ fontSize: "7px"}} className="d-flex mt-2 mr-3"/>
                                 <Card.Title style={{ fontSize: "16px"}} className="d-flex">Womens careers are 'held back' by men</Card.Title>
                             </div>
-                            <div className="d-flex ms-4">
+                            <div className="d-flex ml-4">
                                 <Card.Text className="d-inline-flex  align-items-center">
                                     <p className="d-flex mb-0 text-secondary" style={{ fontSize: "12px"}}>1d ago</p> 
                                     <FontAwesomeIcon icon={faCircle} style={{ fontSize: "6px"}} className="d-flex mx-2 text-secondary"/> 
@@ -211,7 +211,7 @@ class LinkLearn extends Component {
             </Card.Body>
             
 
-            <Card.Footer className="align-items-center py-3" style={{fontSize: '18px', fontWeight: 'bold' }}>
+            <Card.Footer className="align-items-center py-3 pl-2" style={{fontSize: '18px', fontWeight: 'bold' }}>
                     <p className="d-inline-flex mb-0 px-2 ms-3" onClick={this.handleMore}>{footText}</p>
                     <FontAwesomeIcon icon={iconArrow} className="d-inline-flex pt-1"/>
             </Card.Footer>

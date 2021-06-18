@@ -43,14 +43,14 @@ class MiniProfileCard extends Component {
 
         return (
             // <Link to={`/profile/${this.props.useridx}`}>
-            <Card fluid="true" className="d-flex border border-white mt-3 mb-4" onClick={this.goProfile}>
-                <Container fluid className="px-0 mx-0">
+            <Card fluid="true" className="d-flex border border-white mt-1 px-0 mb-4" onClick={this.goProfile}>
+                <Container fluid className="px-0 mx-3">
                     <Row>
-                        <Col fluid="true" md={3} lg={3} className="flex-column ml-1 px-3 align-items-center">
-                            <Card.Img src={DefaultProfilePic} className="rounded-circle" style={{ width: "4em", height: "4em" }} onError={(e)=>{e.target.onerror = "null"; e.target.src=DefaultProfile}}></Card.Img>
+                        <Col fluid="true" md={3} lg={3} className="mx-auto align-items-center px-0">
+                            <Card.Img src={DefaultProfilePic} className="rounded-circle img-fluid" style={{ width: "100%" }} onError={(e)=>{e.target.onerror = "null"; e.target.src=DefaultProfile}}></Card.Img>
                         </Col>
-                        <Col fluid="true" md={9} lg={9} className="flex-column px-2 align-items-center">
-                            <Card.Title fluid="true" className="d-inline-flex container-fluid px-0" style={{ fontSize: '18px', fontWeight: 'bold' }}>{this.props.username} {this.props.usersurname}</Card.Title>
+                        <Col fluid="true" md={9} lg={9} className="mx-auto align-items-center">
+                            <Card.Title fluid="true" className="d-inline-flex container-fluid px-0 mb-0" style={{ fontSize: '18px', fontWeight: 'bold' }}>{this.props.username} {this.props.usersurname}</Card.Title>
                             <Card.Text className="d-inline-flex container-fluid px-0 mb-2" style={{ fontSize: '16px', color: 'gray' }}>{this.props.usertitle}</Card.Text>
                             <Button className="d-flex rounded-pill btn-primary bg-white text-primary border-2 px-4">Connect</Button>
                         </Col>
