@@ -35,10 +35,16 @@ class ExperienceList extends Component {
                                     <div className='d-block'>
                                         <h6 className='m-0'>{this.props.experience.role}</h6>
                                         <p>
-                                            <span className='text-muted'>
+                                            {this.props.experience.endDate
+                                                ? <span className='text-muted'>
                                                 From {this.props.experience.startDate.slice(0,10)} to {this.props.experience.endDate?.slice(0,10)} <br />
                                                 {this.props.experience.area}
-                                            </span>
+                                                </span>
+                                                : <span className='text-muted'>
+                                                From {this.props.experience.startDate.slice(0,10)} <br />
+                                                {this.props.experience.area}
+                                                </span>
+                                            }
                                         </p>
                                     </div>
                                     <div className="ml-auto" onClick={this.handleShow}>
@@ -66,7 +72,7 @@ class ExperienceList extends Component {
                 </ListGroup.Item>
 
             </ListGroup>
-            <ExperienceModal experience={this.props.experience} show={this.state.show} onHide={this.handleClose} fetchExperiences={this.props.fetchExperiences}/>
+            <ExperienceModal userId={this.props.userId} experience={this.props.experience} show={this.state.show} onHide={this.handleClose} fetchExperiences={this.props.fetchExperiences}/>
             </>
         );
     }

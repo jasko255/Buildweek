@@ -2,6 +2,7 @@ import { Navbar, Container, Nav, NavDropdown, Form, FormControl, InputGroup, Col
 import defaultProf from '../assets/default_profile.jpeg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown, faSearch } from "@fortawesome/free-solid-svg-icons"
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   // const searchHolder = <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
@@ -20,31 +21,36 @@ const NavBar = () => {
         </svg></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-        <Form inline className="align-items-center" style={{ height: "40px" }}>
-        <Col xs="auto">
-          <InputGroup className="flex-row mb-2">
-            <InputGroup.Prepend>
-              <InputGroup.Text style={{ height: "40px", width: "40px", borderRadius: "0.25rem 0px 0px 0.25rem", backgroundColor: "White", borderRight: 0, paddingLeft: "1rem", paddingRight: "0" }}>
-                <FontAwesomeIcon style={{ height: "15px", width: "15px"}} icon={faSearch}/>
-              </InputGroup.Text>
-            </InputGroup.Prepend>
-            <FormControl id="inlineFormInputGroup" placeholder="Search" style={{ height: "40px", width: "300px", borderLeft: "0", paddingLeft: "0" }}/>
-          </InputGroup>
-        </Col>
-        </Form>
+                
+          <Form inline className="align-items-center" style={{ height: "40px" }}>
+            <Col xs="auto">
+              <InputGroup className="flex-row mb-2">
+                <InputGroup.Prepend>
+                  <InputGroup.Text style={{ height: "40px", width: "40px", borderRadius: "0.25rem 0px 0px 0.25rem", backgroundColor: "White", borderRight: 0, paddingLeft: "1rem", paddingRight: "0" }}>
+                    <FontAwesomeIcon style={{ height: "15px", width: "15px" }} icon={faSearch} />
+                  </InputGroup.Text>
+                </InputGroup.Prepend>
+                <FormControl id="inlineFormInputGroup" placeholder="Search" style={{ height: "40px", width: "300px", borderLeft: "0", paddingLeft: "0" }} />
+              </InputGroup>
+            </Col>
+          </Form>
           <Nav className="d-inline-flex ms-auto mt-1">
             
 
             <Nav.Link fluid href="#home" className="flex-col text-center py-0">
+            <Link to={'/'}>
             <svg id="global-nav-icon--mercado__home" height="40" width="40" viewBox="0 0 30 30" className="mx-4">
               <path transform="translate(2.5, 2.5)" d="m23 9v2h-2v7c0 1.7-1.3 3-3 3h-4v-6h-4v6h-4c-1.7 0-3-1.3-3-3v-7h-2v-2l11-7z"></path>
             </svg> 
+            </Link>
             <p className="mb-0 text-secondary">Home</p>
             </Nav.Link>
             <Nav.Link href="#link"  className="flex-col text-center py-0">
+            <Link to={'/search'}>
               <svg id="global-nav-icon--mercado__my-network" height="40" width="40" viewBox="0 0 30 30" className="mx-4">
               <path transform="translate(2.5, 2.5)" d="m12 16v6h-9v-6c0-1.7 1.3-3 3-3h3c1.7 0 3 1.3 3 3zm5.5-3c1.9 0 3.5-1.6 3.5-3.5s-1.6-3.5-3.5-3.5-3.5 1.6-3.5 3.5 1.6 3.5 3.5 3.5zm1 2h-2c-1.4 0-2.5 1.1-2.5 2.5v4.5h7v-4.5c0-1.4-1.1-2.5-2.5-2.5zm-11-13c-2.5 0-4.5 2-4.5 4.5s2 4.5 4.5 4.5 4.5-2 4.5-4.5-2-4.5-4.5-4.5z"></path>
             </svg>
+            </Link>
             <p className="mb-0 text-secondary">My Network</p>
             </Nav.Link>
             <Nav.Link href="#home" className="flex-col text-center py-0">
@@ -66,7 +72,9 @@ const NavBar = () => {
             <p className="mb-0 text-secondary">Notifications</p>
             </Nav.Link>
             <div className="flex-col">
-            <img width="30" src={defaultProf} height="30" alt="Janusz Kondziarz" id="ember30" className="global-nav__me-photo ember-view rounded-circle d-flex mx-auto my-1" />
+            <Link to={'/profile/60c89716c193050015871546'}>
+              <img width="30" src={defaultProf} height="30" alt="Janusz Kondziarz" id="ember30" className="global-nav__me-photo ember-view rounded-circle d-flex mx-auto my-1" />
+            </Link>  
             <NavDropdown title="Me" id="basic-nav-dropdown" className="d-flex px-auto mx-4" style={{ padding: "none" }}>
               <img width="24" src="https://media-exp1.licdn.com/dms/image/C4D35AQEHGgKSN6gBWg/profile-framedphoto-shrink_400_400/0/1620813541179?e=1623769200&amp;v=beta&amp;t=XXSCoiZQhn2znwW9T6YHYgKWvhxfyNgtS6X2J5n6lGE" height="24" alt="Janusz Kondziarz" id="ember30" className="global-nav__me-photo ember-view" />
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>

@@ -44,6 +44,12 @@ class Experience extends Component {
         this.fetchExperiences()
     }
 
+    componentDidUpdate = async (prevProps, prepState) => {
+        if(prevProps.match.params.userId !== this.props.match.params.userId){
+            this.fetchExperiences()
+        }
+    }
+
     handleClose = () => this.setState({ show: false });
     handleShow = () => this.setState({ show: true });
 
@@ -93,11 +99,13 @@ class Experience extends Component {
         }
     }
 
+   
+
     render() {
         return (
             <>
-                {/* <Row> */}
-                {/* <Col md={8}> */}
+                {/* <Row>
+                <Col md={8}> */}
                 <Card >
                     <div className='d-flex justify-content-between p-3'>
                         <h4 className='font-weight-normal'>Experience</h4>
@@ -163,8 +171,8 @@ class Experience extends Component {
                         </Button> */}
                     </Modal.Footer>
                 </Modal>
-                {/* </Col> */}
-                {/* </Row> */}
+                {/* </Col>
+                </Row> */}
             </>
         );
     }
