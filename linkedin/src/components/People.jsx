@@ -41,12 +41,12 @@ const People = (props) => {
               {/* <ListGroup variant="flush">
 
                 <ListGroup.Item style={{ textAlign: 'left' }}> */}
-                  <Row className='m-3'>
+                  <Row className='m-2'>
                     <Col md="auto">
                       <img style={{ width: "3em", height: "3em" }} src={DefaultProfilePic} onError={(e) => { e.target.onerror = "null"; e.target.src = DefaultProfile }} alt='1' className="rounded-circle my-2" />
                     </Col>
                     <Col className='ml-auto mt-2'>
-                      <Card.Title>
+                      <Card.Title className='mb-0'>
                         {el.name} {el.surname}
                       </Card.Title>
                       <Card.Text>
